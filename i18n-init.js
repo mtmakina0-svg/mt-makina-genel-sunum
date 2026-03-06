@@ -347,7 +347,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { b: 'balya.1.badge', h: 'balya.1.h', p: 'balya.1.p' },
         { b: 'balya.2.badge', h: 'balya.2.h', p: 'balya.2.p' },
         { b: 'balya.3.badge', h: 'balya.3.h', p: 'balya.3.p' },
-        { b: 'balya.4.badge', h: 'balya.4.h', p: 'balya.4.p' }
+        { b: 'balya.4.badge', h: 'balya.4.h', p: 'balya.4.p' },
+        { b: 'balya.5.badge', h: 'balya.5.h', p: 'balya.5.p' }
     ];
     balyaCards.forEach(function (card, i) {
         if (balyaKeys[i]) {
@@ -361,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     // Feature items in balya
     var balyaFeatures = document.querySelectorAll('#section-balya .feature-item span');
-    var balyaFeatKeys = ['balya.feat.1', 'balya.feat.2', 'balya.feat.3', 'balya.feat.4'];
+    var balyaFeatKeys = ['balya.feat.1', 'balya.feat.2', 'balya.feat.3', 'balya.feat.4', 'balya.feat.5'];
     balyaFeatures.forEach(function (el, i) {
         if (balyaFeatKeys[i]) el.setAttribute('data-i18n', balyaFeatKeys[i]);
     });
