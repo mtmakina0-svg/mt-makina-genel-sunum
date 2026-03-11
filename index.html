@@ -1,374 +1,1235 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MT Makina | Yakma Fırınları — Incineration Systems</title>
-    <meta name="description" content="MT Makina yakma fırınları: tıbbi atık, hayvansal atık, endüstriyel atık yakma fırınları. CE sertifikalı, AB standartlarına uygun.">
+    <title>MT Makina | Geri Dönüşüm Sistemleri</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="yakma-firini.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Language Switcher -->
     <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="tr" onclick="setLang('tr')">TR</button>
-        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
-    </div>
-    <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
-    <nav class="nav-dots" id="navDots">
-        <div class="dot active" data-section="0" title="Giriş"></div>
-        <div class="dot" data-section="1" title="Hakkımızda"></div>
-        <div class="dot" data-section="2" title="Teknoloji"></div>
-        <div class="dot" data-section="3" title="Nasıl Çalışır"></div>
-        <div class="dot" data-section="4" title="Neden Biz"></div>
-        <div class="dot" data-section="5" title="Tıbbi Atık"></div>
-        <div class="dot" data-section="6" title="Endüstriyel"></div>
-        <div class="dot" data-section="7" title="Mobil"></div>
-        <div class="dot" data-section="8" title="Modeller"></div>
-        <div class="dot" data-section="9" title="Referanslar"></div>
-        <div class="dot" data-section="10" title="İletişim"></div>
-    </nav>
-    <div class="timer-display" id="timerDisplay"><span>⏱</span><span id="timerText">00:00</span></div>
-    <div class="presentation-controls">
-        <button class="control-btn" id="btnPrev"><span>‹</span></button>
-        <button class="control-btn" id="btnFullscreen"><span>⛶</span></button>
-        <button class="control-btn" id="btnNext"><span>›</span></button>
+        <button class="lang-btn active" data-lang="tr" onclick="setLanguage('tr')">TR</button>
+        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="ru" onclick="setLanguage('ru')">RU</button>
+        <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
     </div>
 
-    <!-- ===== 1. HERO ===== -->
-    <section class="section hero-section" id="s-hero">
-        <div class="hero-bg"><img src="./yakma fırını/Yakma fırınları görselleri/tıbbi yakma fırını/yakmafırını.webp" alt="Yakma Fırını"></div>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <nav class="nav-dots" id="navDots">
+        <div class="dot active" data-section="0" title="Giriş"></div>
+        <div class="dot" data-section="1" title="Tanıtım Video"></div>
+        <div class="dot" data-section="2" title="Hakkımızda"></div>
+        <div class="dot" data-section="3" title="Parçalama"></div>
+        <div class="dot" data-section="4" title="Yakma Fırınları"></div>
+        <div class="dot" data-section="5" title="Ayrıştırma"></div>
+        <div class="dot" data-section="6" title="Balya Presleri"></div>
+        <div class="dot" data-section="7" title="Tesisler"></div>
+        <div class="dot" data-section="8" title="Referanslar"></div>
+        <div class="dot" data-section="9" title="Neden Biz"></div>
+        <div class="dot" data-section="10" title="İletişim"></div>
+    </nav>
+
+    <!-- Presentation Timer -->
+    <div class="timer-display" id="timerDisplay">
+        <span class="timer-icon">⏱</span>
+        <span id="timerText">00:00</span>
+    </div>
+
+    <!-- Presentation Controls -->
+    <div class="presentation-controls">
+        <button class="control-btn" id="btnPrev" title="Önceki"><span>‹</span></button>
+        <button class="control-btn" id="btnFullscreen" title="Tam Ekran"><span>⛶</span></button>
+        <button class="control-btn" id="btnNext" title="Sonraki"><span>›</span></button>
+    </div>
+
+    <!-- SECTION 1: HERO / GİRİŞ -->
+    <section class="section hero-section" id="section-hero">
         <div class="hero-overlay"></div>
-        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-bg-pattern"></div>
         <div class="hero-content">
-            <img class="hero-logo" src="./yakma fırını/mt-makina-logo.webp" alt="MT Makina">
-            <p class="hero-pre-title" data-i18n="hero_pre">20+ Yıllık Deneyim • %100 Yerli Üretim • 40+ Ülkeye İhracat</p>
-            <h1 class="hero-title"><span data-i18n="hero_title_1">Yakma Fırınlarında</span><br><span class="highlight" data-i18n="hero_title_2">Güvenilir Çözüm Ortağınız</span></h1>
-            <p class="hero-subtitle" data-i18n="hero_sub">Tıbbi Atık • Hayvansal Atık • Endüstriyel Atık • Çöp Yakma • Mobil Fırınlar</p>
-            <p class="hero-desc" data-i18n="hero_desc">AB standartlarına uygun, düşük emisyonlu, yüksek verimli yakma fırınları ile atık bertaraf süreçlerinizde güvenilir çözüm ortağınız.</p>
-            <div class="hero-badges">
-                <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-i18n="hero_b1">CE Sertifikalı</span></div>
-                <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="hero_b2">Sıfır Emisyon</span></div>
-                <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.09.54.2 1.08.7 2.81 2a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.73.5 2.27.61 2.81.7A2 2 0 0122 16.92z"/></svg><span data-i18n="hero_b3">7/24 Destek</span></div>
-                <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg><span data-i18n="hero_b4">Anahtar Teslim</span></div>
+            <div class="logo-watermark">
+                <img src="./assets/mtmakinagenelsunum/Mt Makina-Logo.webp" alt="MT Makina">
             </div>
-            <div class="scroll-indicator"><div class="scroll-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div></div>
+            <p class="hero-pre-title animate-fade-up">20+ Yıllık Deneyim • %100 Yerli Üretim • 40+ Ülkeye İhracat</p>
+            <h1 class="hero-title animate-fade-up">
+                Geri Dönüşümün<br>
+                <span class="highlight">Öncü Gücü</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-up">Parçalama Makineleri | Yakma Fırınları | Ayrıştırma Sistemleri |
+                Tesisler</p>
+            <p class="hero-desc animate-fade-up">Geri dönüşüm ve atık yönetimi alanında yenilikçi ve çevre dostu
+                çözümler sunarak sektördeki lider konumumuzu sürdürüyoruz. Sürdürülebilir teknolojilerimizle geleceğe
+                yatırım yapıyoruz.</p>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ===== 2. ABOUT (Full-Width Split) ===== -->
-    <section class="section" id="s-about">
-        <div class="wide-split">
-            <div class="split-content animate-on-scroll">
-                <div class="content-block">
-                    <span class="section-tag" data-i18n="about_tag">Biz Kimiz?</span>
-                    <h2><span data-i18n="about_title_1">Türkiye'nin Yakma Fırını</span> <span class="highlight" data-i18n="about_title_2">Teknoloji Lideri</span></h2>
-                    <p class="lead" data-i18n="about_p1">MT Makina, 20 yılı aşkın süredir Türkiye'de yerli üretim yapan, geri dönüşüm ve atık yönetimi alanında uzmanlaşmış bir firmadır. Parçalama makineleri, ayrıştırma sistemleri, balya presleri, yakma fırınları ve çeşitli tesislerin üretiminde lider konumdayız.</p>
-                    <p data-i18n="about_p2">Gücümüzü, profesyonel kadromuzdan ve makine mühendisi olan kurucumuzdan alıyoruz. Geri dönüşümün en önemli kaynak olduğu prensibinden yola çıkarak, tüm çalışanlarımızla kenetlenmiş bir aile anlayışı içinde, doğru ve dürüst olmaktan taviz vermeden büyümemizi sürdürüyoruz.</p>
-                    <p data-i18n="about_p3">Çağdaş çalışma alanlarımız ve her geçen gün genişleyen modern makine parkurumuz ile sektörün en iyisi olma yolunda emin adımlarla ilerliyoruz.</p>
+    <!-- SECTION 2: VIDEO TANITIM -->
+    <section class="section video-section" id="section-video">
+        <div class="video-container">
+            <iframe id="introVideo"
+                src="https://www.youtube.com/embed/IXvBxoGcYuY?autoplay=1&mute=1&loop=1&playlist=IXvBxoGcYuY&controls=1&rel=0"
+                title="MT Makina — Geri Dönüşüm ve Atık Yönetiminde Anahtar Teslim Çözümler" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+        <div class="video-overlay-text" style="pointer-events: none;">
+            <p class="video-caption">MT Makina Tanıtım Videosu</p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: HAKKIMIZDA -->
+    <section class="section about-section" id="section-about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <span class="section-tag gold">Biz Kimiz?</span>
+                    <h2>Türkiye'nin Geri Dönüşüm <span class="highlight">Teknoloji Lideri</span></h2>
+                    <p class="about-text">MT Makina, 20 yılı aşkın bir süredir geri dönüşüm ve atık yönetimi sektöründe
+                        faaliyet gösteren, %100 yerli sermaye ile üretim yapan bir Türk mühendislik firmasıdır.</p>
+                    <p class="about-text">Sabit ve mobil parçalama makineleri, yakma fırınları, tromel elek, balya
+                        presleri, metal seperatörler ve komple tesis çözümleri ile sektöre hizmet veriyoruz.</p>
+
                     <div class="about-stats">
-                        <div class="stat-item"><span class="stat-number" data-target="20">0</span><span class="stat-suffix">+</span><span class="stat-label" data-i18n="stat1_lbl">Yıllık Tecrübe</span></div>
-                        <div class="stat-item"><span class="stat-number" data-target="40">0</span><span class="stat-suffix">+</span><span class="stat-label" data-i18n="stat2_lbl">Ülkeye İhracat</span></div>
-                        <div class="stat-item"><span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span><span class="stat-label" data-i18n="stat3_lbl">Tamamlanan Proje</span></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="20">20</span>
+                            <span class="stat-suffix">+</span>
+                            <span class="stat-label">Yıllık Tecrübe</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="40">40</span>
+                            <span class="stat-suffix">+</span>
+                            <span class="stat-label">Ülkeye İhracat</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="500">500</span>
+                            <span class="stat-suffix">+</span>
+                            <span class="stat-label">Tamamlanan Proje</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-values animate-on-scroll">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                <path d="M2 17l10 5 10-5" />
+                                <path d="M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <h3>Misyonumuz</h3>
+                        <p>Çevre dostu ve yenilikçi teknolojiler geliştirerek, endüstriyel ortaklarımıza en etkili ve
+                            verimli çözümleri sunmak.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon gold">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                        </div>
+                        <h3>Vizyonumuz</h3>
+                        <p>Dünya çapında yenilikçi ve sürdürülebilir çözümler sunan, global ölçekte tercih edilen lider
+                            bir marka olmak.</p>
                     </div>
                 </div>
             </div>
-            <div class="split-visual animate-on-scroll">
-                <img loading="lazy" src="./yakma fırını/mtmakinafab.webp" alt="MT Makina Fabrika">
-            </div>
         </div>
     </section>
 
-    <!-- GIF Pair 1 -->
-    <div class="gif-pair animate-on-scroll">
-        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/GİRİŞ GIF.gif" alt="Yakma Fırını"></div>
-        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/82c50025-1790-4a2b-af6f-83628b43dd2a-ezgif.com-video-to-gif-converter.gif" alt="Yakma Fırını Çalışma"></div>
-    </div>
-
-    <!-- ===== 3. WHAT IS AN INCINERATOR (Full-Width Split Reverse) ===== -->
-    <section class="section dark-bg" id="s-what">
-        <div class="wide-split reverse">
-            <div class="split-content animate-on-scroll">
-                <div class="content-block">
-                    <span class="section-tag" data-i18n="what_tag">Yakma Fırını Nedir?</span>
-                    <h2><span data-i18n="what_title_1">Atık Yakma Teknolojisi:</span><br><span class="highlight" data-i18n="what_title_2">Kapsamlı Bir Bakış</span></h2>
-                    <p class="lead" data-i18n="what_lead">Yakma fırınları (incinerator), kontrollü yüksek sıcaklık ortamında atıkların güvenli bir şekilde bertaraf edilmesini sağlayan endüstriyel sistemlerdir. Binlerce yıldır insanlık tarafından kullanılan yanma prensibinin, modern mühendislik ile birleşmesidir.</p>
-                    <p data-i18n="what_p1">Bir yakma fırını sistemi temel olarak iki ana bileşenden oluşur: birincil yanma odası ve ikincil yanma odası. Birincil yanma odasında atıklar 650°C–950°C sıcaklıkta yakılır. Bu aşamada atık maddelerin büyük bölümü gaz ve kül haline dönüşür. Ancak bu yeterli değildir — çıkan gazlar hâlâ zararlı bileşenler içerir.</p>
-                    <p data-i18n="what_p2">İşte burada ikincil yanma odası devreye girer. Birincil odadan çıkan gazlar, ikincil odada 850°C–1200°C sıcaklıkta yeniden yakılır. Bu süreç, dioksin, furan ve diğer toksik gazların tamamen parçalanarak zararsız hale gelmesini sağlar.</p>
-                    <p data-i18n="what_p3">Modern yakma fırınları ayrıca gelişmiş baca gazı arıtma sistemleri ile donatılmıştır. Partikül filtreleri, gaz yıkama üniteleri ve aktif karbon filtreler sayesinde atmosfere salınan emisyon değerleri, uluslararası standartların çok altında tutulur.</p>
-                    <p data-i18n="what_p4">Yanma sonrası kalan kül, hacim olarak orijinal atığın yalnızca %3–5'i kadardır. Bu dramatik hacim azalması, yakma teknolojisinin en büyük avantajlarından biridir.</p>
-                </div>
-            </div>
-            <div class="split-visual animate-on-scroll">
-                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/tıbbi yakma fırını/undefined_Ultra_realistic_4K_s (1).webp" alt="Yakma Fırını Teknolojisi">
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 4. HOW IT WORKS ===== -->
-    <section class="section" id="s-how">
+    <!-- SECTION 3: PARÇALAMA MAKİNELERİ - Genişletilmiş -->
+    <section class="section product-detail-section" id="section-parcalama">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <span class="section-tag" data-i18n="how_tag">Nasıl Çalışır?</span>
-                <h2><span data-i18n="how_title_1">Yakma Fırını</span> <span class="highlight" data-i18n="how_title_2">Çalışma Prensibi</span></h2>
+                <span class="section-tag gold">Ürün Grubu</span>
+                <h2>Parçalama <span class="highlight">Makineleri</span></h2>
+                <p class="section-desc">Tek, çift ve dört şaftlı parçalama makineleri ile her türlü atık için
+                    endüstriyel çözümler. Palet, metal, ağaç, lastik, plastik, cam ve özel atıklar için yüksek
+                    performanslı sistemler.</p>
             </div>
-            <!-- Process Steps -->
-            <div class="process-steps stagger-children animate-on-scroll">
-                <div class="process-step" data-step="1"><h4 data-i18n="how_step1_t">Yükleme</h4><p data-i18n="how_step1_p">Atıklar manuel veya otomatik hidrolik sistem ile birincil yanma odasına yüklenir.</p></div>
-                <div class="process-step" data-step="2"><h4 data-i18n="how_step2_t">Birincil Yanma</h4><p data-i18n="how_step2_p">Brülörler devreye girer. Oda sıcaklığı 650°C–950°C'ye ulaşır. Atıklar gaz ve küle dönüşür.</p></div>
-                <div class="process-step" data-step="3"><h4 data-i18n="how_step3_t">İkincil Yanma</h4><p data-i18n="how_step3_p">Gazlar ikincil odada 850°C–1200°C'de yeniden yakılır. Toksik maddeler tamamen parçalanır.</p></div>
-                <div class="process-step" data-step="4"><h4 data-i18n="how_step4_t">Baca Arıtma</h4><p data-i18n="how_step4_p">Filtre sistemleri gazları arıtır. Temiz gaz bacadan salınır. Kül toplanır.</p></div>
+
+            <!-- Çift Şaftlı Serisi -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Çift Şaftlı Parçalama Makineleri (CS Serisi)</h3>
+                <p class="showcase-desc">Yüksek tork, düşük hız prensibiyle çalışan çift şaftlı parçalama makineleri.
+                    Plastik, kağıt, karton, ahşap, tekstil ve benzeri malzemelerin parçalanmasında yüksek verimlilik
+                    sağlar.</p>
+                <div class="machine-gallery">
+                    <div class="machine-card">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Çift şaftlı parçalama/CS-20/CS-20-1.webp"
+                            alt="CS-20">
+                        <div class="machine-info">
+                            <h4>CS-20</h4>
+                            <p>Kompakt tasarım, küçük işletmeler için ideal</p>
+                        </div>
+                    </div>
+                    <div class="machine-card">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Çift şaftlı parçalama/CS-40/CS-40-1.webp"
+                            alt="CS-40">
+                        <div class="machine-info">
+                            <h4>CS-40</h4>
+                            <p>Orta ölçekli üretim kapasitesi</p>
+                        </div>
+                    </div>
+                    <div class="machine-card">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Çift şaftlı parçalama/CS-60/CS-60-1.webp"
+                            alt="CS-60">
+                        <div class="machine-info">
+                            <h4>CS-60</h4>
+                            <p>Yüksek hacimli atık işleme</p>
+                        </div>
+                    </div>
+                    <div class="machine-card">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Çift şaftlı parçalama/CS-80/CS-80-1.webp"
+                            alt="CS-80">
+                        <div class="machine-info">
+                            <h4>CS-80</h4>
+                            <p>Endüstriyel ağır hizmet parçalama</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tek Şaftlı Serisi - Genişletilmiş -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Tek Şaftlı Parçalama Makineleri (TSH Serisi)</h3>
+                <p class="product-long-desc">Tek şaftlı parçalama makineleri, plastik geri dönüşümünde, granül
+                    üretiminde ve hafif hacimli atıkların işlenmesinde kullanılan yüksek performanslı sistemlerdir.
+                    Yüksek devir hızı ve hassas kesim özelliği ile homojen parça boyutu sağlar. Kolay bıçak değişimi,
+                    düşük enerji tüketimi ve kompakt tasarımıyla öne çıkan TSH serisi, plastik şişe, film, boru, profil,
+                    kablo ve benzeri malzemelerin parçalanmasında maksimum verimlilik sunar. Modüler yapısı sayesinde
+                    farklı kapasitelere kolayca adapte edilebilir.</p>
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Tek şaftlı parçalama/TSH-60/tsh-60-1.webp"
+                            alt="TSH-60">
+                        <div class="machine-info">
+                            <span class="model-badge">TSH-60</span>
+                            <h4>Kompakt Giriş Modeli</h4>
+                            <p>Küçük atölye ve işletmeler için ideal başlangıç modeli. Düşük enerji tüketimi ile yüksek
+                                verimlilik.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Tek şaftlı parçalama/TSH-80/1.webp"
+                            alt="TSH-80">
+                        <div class="machine-info">
+                            <span class="model-badge">TSH-80</span>
+                            <h4>Orta Ölçek Çözümü</h4>
+                            <p>Artan üretim taleplerini karşılayan güçlü motor ve geliştirilmiş bıçak sistemi.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Tek şaftlı parçalama/TSH-100/tsh-100-1.webp"
+                            alt="TSH-100">
+                        <div class="machine-info">
+                            <span class="model-badge">TSH-100</span>
+                            <h4>Endüstriyel Standart</h4>
+                            <p>Profesyonel geri dönüşüm tesisleri için tercih edilen model. Yüksek kapasite ve
+                                dayanıklılık.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Tek şaftlı parçalama/TSH-130/tsh-130-1.webp"
+                            alt="TSH-130">
+                        <div class="machine-info">
+                            <span class="model-badge">TSH-130</span>
+                            <h4>İleri Kapasite</h4>
+                            <p>Büyük hacimli atık işleme gereksinimleri için tasarlanmış güçlü ve verimli sistem.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Tek şaftlı parçalama/TSH-160/tsh-160-1.webp"
+                            alt="TSH-160">
+                        <div class="machine-info">
+                            <span class="model-badge">TSH-160</span>
+                            <h4>Ağır Hizmet</h4>
+                            <p>Zorlu endüstriyel koşullar için sertleştirilmiş bıçaklar ve güçlendirilmiş gövde.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Tek şaftlı parçalama/TSH-200/tsh-200-1.webp"
+                            alt="TSH-200">
+                        <div class="machine-info">
+                            <span class="model-badge">TSH-200</span>
+                            <h4>Maksimum Kapasite</h4>
+                            <p>En yüksek üretim hacmi için tasarlanmış amiral gemisi model. 24/7 kesintisiz çalışma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dört Şaftlı Serisi - Genişletilmiş -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Dört Şaftlı Parçalama Makineleri</h3>
+                <p class="product-long-desc">Dört şaftlı parçalama makineleri, en zorlu endüstriyel atıkların işlenmesi
+                    için tasarlanmış ultra güçlü sistemlerdir. Dört adet parçalama şaftı ile eşsiz bir parçalama gücü
+                    sunar ve en sert malzemeleri bile kolayca parçalar. Özellikle hacimli ve sert atıkların (mobilya,
+                    beyaz eşya, endüstriyel paletler, otomobil parçaları) parçalanmasında tercih edilir. Hidrolik
+                    beslemeli giriş sistemi, otomatik ters dönüş mekanizması ve uzaktan izleme özellikleriyle donatılmış
+                    bu makineler, 24/7 kesintisiz çalışma için tasarlanmıştır.</p>
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Dört şaftlı parçalama/c1f82948-14f5-4d96-8585-4acd216dd86a.webp"
+                            alt="Dört Şaftlı">
+                        <div class="machine-info">
+                            <span class="model-badge">QS Serisi</span>
+                            <h4>Ağır Sanayi Parçalama</h4>
+                            <p>Mobilya, beyaz eşya ve hacimli atıklar için maksimum parçalama gücü.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Dört şaftlı parçalama/61f9ff40-e0e5-424b-b9bd-2f621f0f4337.webp"
+                            alt="Dört Şaftlı">
+                        <div class="machine-info">
+                            <span class="model-badge">Endüstriyel</span>
+                            <h4>7/24 Kesintisiz Çalışma</h4>
+                            <p>Otomotiv ve metal sanayi atıkları için tasarlanmış dayanıklı yapı.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Dört şaftlı parçalama/2090c30f-d9b9-4d41-a512-89eaaafdd693.webp"
+                            alt="Dört Şaftlı">
+                        <div class="machine-info">
+                            <span class="model-badge">Yüksek Tork</span>
+                            <h4>Ultra Güçlü Motor</h4>
+                            <p>En sert malzemeleri parçalamak için hidrolik destekli yüksek torklu sistem.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Dört şaftlı parçalama/cfee1a74-b179-4cf8-b005-7381cfd1d5ff.webp"
+                            alt="Dört Şaftlı">
+                        <div class="machine-info">
+                            <span class="model-badge">Kompakt Tasarım</span>
+                            <h4>Alan Verimli Çözüm</h4>
+                            <p>Sınırlı alanlarda maksimum performans sunan akıllı tasarım.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metal Parçalama - Genişletilmiş -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Metal Parçalama Makineleri</h3>
+                <p class="product-long-desc">Metal parçalama makineleri, hurda metal, teneke, alüminyum profil, çelik
+                    halatlar, bakır kablolar ve benzeri metallerin parçalanması için özel olarak tasarlanmıştır. Yüksek
+                    torklu motorlar ve sertleştirilmiş özel alaşımlı bıçaklar sayesinde en sert metalleri bile verimli
+                    şekilde parçalar. Elektrik motoru veya hidrolik tahrik seçenekleri, ayarlanabilir çıkış boyutu ve
+                    otomatik yağlama sistemi ile donatılmıştır. Metal geri dönüşüm tesisleri, hurda tesisleri ve üretim
+                    atölyelerinde yoğun olarak kullanılır.</p>
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Metal parçalama makinesi/074117c0-da53-4461-824a-171c774ca647.webp"
+                            alt="Metal Parçalama">
+                        <div class="machine-info">
+                            <span class="model-badge">MS Serisi</span>
+                            <h4>Hurda Metal Parçalama</h4>
+                            <p>Çelik, alüminyum ve bakır gibi metallerin hızlı ve etkili parçalanması.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Metal parçalama makinesi/15f2f63e-025f-4dd6-8405-b1d4f61797c1.webp"
+                            alt="Metal Parçalama">
+                        <div class="machine-info">
+                            <span class="model-badge">Ağır Hizmet</span>
+                            <h4>Endüstriyel Metal Atıkları</h4>
+                            <p>Fabrika ve üretim tesisleri için yüksek kapasiteli metal parçalama.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Metal parçalama makinesi/382e407f-f74f-4b00-8b07-1f91953dd46a.webp"
+                            alt="Metal Parçalama">
+                        <div class="machine-info">
+                            <span class="model-badge">Çelik Halat</span>
+                            <h4>Özel Alaşım Bıçaklar</h4>
+                            <p>Çelik halatlar ve kalın metal profiller için sertleştirilmiş kesici sistem.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/Metal parçalama makinesi/d7659fc2-8b8b-4776-811e-3d414d1755ad.webp"
+                            alt="Metal Parçalama">
+                        <div class="machine-info">
+                            <span class="model-badge">Otomatik</span>
+                            <h4>Akıllı Kontrol Sistemi</h4>
+                            <p>PLC kontrollü otomatik besleme ve çıkış boyutu ayarlama sistemi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobil Kırıcılar - Genişletilmiş -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Mobil Parçalama Sistemleri</h3>
+                <p class="product-long-desc">Mobil parçalama sistemleri, saha içinde hareket edebilen, taşınabilir
+                    parçalama çözümleri sunar. İnşaat, yıkım, orman ve tarım sektörlerinde atıkların yerinde işlenmesi
+                    için tasarlanmıştır. Paletli veya tekerlekli şasi seçenekleri, dizel veya elektrikli motor
+                    alternatifleri mevcuttur. Uzaktan kumandalı çalışma, GPS takip ve performans izleme sistemleri ile
+                    donatılmış bu makineler, atık taşıma maliyetlerini önemli ölçüde düşürür ve verimliliği artırır.</p>
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/mobil kırıcı/csm-150/hf_20260123_100008_09976bf3-2e6a-4129-9b38-8fe13313da1e.webp"
+                            alt="CSM-150">
+                        <div class="machine-info">
+                            <span class="model-badge">CSM-150</span>
+                            <h4>Paletli Mobil Kırıcı</h4>
+                            <p>Her arazi koşulunda çalışabilen paletli şasi. İnşaat ve yıkım sahaları için ideal.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/mobil kırıcı/csm-200/Generated Image January 23, 2026 - 2_07PM.webp"
+                            alt="CSM-200">
+                        <div class="machine-info">
+                            <span class="model-badge">CSM-200</span>
+                            <h4>Yüksek Kapasite Mobil</h4>
+                            <p>Büyük hacimli atık işleme gereksinimleri için güçlü dizel motor.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/mobil kırıcı/tsm-150/hf_20260123_080105_335b37e5-dc00-43fb-9ce1-e65f13d904f9.webp"
+                            alt="TSM-150">
+                        <div class="machine-info">
+                            <span class="model-badge">TSM-150</span>
+                            <h4>Tekerlekli Mobil Sistem</h4>
+                            <p>Hızlı taşınabilirlik için tekerlekli şasi. Karayolu taşımacılığına uygun.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/mobil kırıcı/tsm-300/hf_20260123_082907_5513ea48-fee6-4459-9483-93372a6d5ec5.webp"
+                            alt="TSM-300">
+                        <div class="machine-info">
+                            <span class="model-badge">TSM-300</span>
+                            <h4>Ultra Kapasite Mobil</h4>
+                            <p>Maksimum üretim hacmi için tasarlanmış büyük ölçekli mobil parçalama.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 5. WHY US ===== -->
-    <section class="section dark-bg" id="s-why">
+    <!-- SECTION 5: YAKMA FIRINLARI - Genişletilmiş -->
+    <section class="section product-detail-section dark-bg" id="section-yakma">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <span class="section-tag" data-i18n="why_tag">Farkımız</span>
-                <h2><span data-i18n="why_title_1">Neden</span> <span class="highlight" data-i18n="why_title_2">MT Makina?</span></h2>
+                <span class="section-tag gold">Ürün Grubu</span>
+                <h2>Yakma <span class="highlight">Fırınları</span></h2>
+                <p class="product-long-desc">MT Makina yakma fırınları, tıbbi atık, hayvansal atık, endüstriyel atık ve
+                    genel çöp yakma işlemlerinde sıfır emisyon teknolojisi ile çevre dostu ve AB standartlarına uygun
+                    çözümler sunar. Birincil ve ikincil yanma odaları, otomatik besleme sistemleri, baca gazı arıtma
+                    üniteleri ve akıllı kontrol panelleri ile donatılmış bu sistemler, düşük işletme maliyeti ve yüksek
+                    verimlilik sağlar. Hastane, veteriner klinik, belediye ve sanayi tesislerinde güvenle kullanılır.
+                </p>
             </div>
-            <div class="why-grid stagger-children animate-on-scroll">
-                <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.5-1.5-1-5 1-7 0 3.5 1.5 6 4 6 2.5 0 3.5-2.5 2-5 1 1 5 2 5 6 0 4-4 6-8 6a2.5 2.5 0 00-2.5 2.5"/></svg></div><h3 data-i18n="why1_t">Güçlü Yanma Teknolojisi</h3><p data-i18n="why1_p">İleri yanma teknolojisi ile atıkların maksimum verimlilikle ve düşük emisyon seviyeleriyle yakılmasını sağlarız.</p></div>
-                <div class="why-card"><div class="why-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9Z"/></svg></div><h3 data-i18n="why2_t">Düşük Emisyonlu Sistemler</h3><p data-i18n="why2_p">Partikül filtreleri ve gaz arıtma teknolojileri sayesinde havaya salınan gazların çevreye zarar vermesi önlenir.</p></div>
-                <div class="why-card"><div class="why-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div><h3 data-i18n="why3_t">Çeşitli Atık Uygunluğu</h3><p data-i18n="why3_p">Tıbbi, hayvansal, tehlikeli ve endüstriyel atıklar için özel olarak tasarlanmış yakma fırınları.</p></div>
-                <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h3 data-i18n="why4_t">Dayanıklı Tasarım</h3><p data-i18n="why4_p">Yüksek sıcaklıklara ve zorlu çalışma koşullarına dayanıklı yapı. Bakım maliyetleri minimize edilir.</p></div>
-                <div class="why-card"><div class="why-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 010 4h-.09c-.658.003-1.25.396-1.51 1z"/></svg></div><h3 data-i18n="why5_t">Otomasyon ve Kolay Kullanım</h3><p data-i18n="why5_p">Gelişmiş kontrol panelleri ile operatörler yakma sürecini kolayca yönetir.</p></div>
-                <div class="why-card"><div class="why-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3 data-i18n="why6_t">Yerli Üretim ve Teknik Destek</h3><p data-i18n="why6_p">Satış sonrası destek ve yedek parça konusunda hızlı çözümler.</p></div>
-            </div>
-        </div>
-    </section>
 
-    <!-- GIF Pair 2 -->
-    <div class="gif-pair animate-on-scroll">
-        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/c3c35790-4c3c-45a3-a99b-bdd721df978f-ezgif.com-video-to-gif-converter.gif" alt="Yanma Süreci"></div>
-        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/Photorealistic_cinematic_video_202509041721-ezgif.com-video-to-gif-converter.gif" alt="Sinematik"></div>
-    </div>
-
-    <!-- ===== BRÜLÖR SECTION ===== -->
-    <section class="section auto-height" id="s-burner">
-        <div class="wide-split">
-            <div class="split-content animate-on-scroll">
-                <div class="content-block">
-                    <span class="section-tag" data-i18n="brn_tag">Brülör Sistemleri</span>
-                    <h2><span data-i18n="brn_title_1">Ecoflam & Riello</span><br><span class="highlight" data-i18n="brn_title_2">Endüstriyel Brülörler</span></h2>
-                    <p class="lead" data-i18n="brn_p1">MT Makina yakma fırınlarında, dünya genelinde endüstriyel yanma teknolojisinin öncüsü olan İtalyan markaları Ecoflam ve Riello brülörler kullanılmaktadır. Bu tercih, yakma süreçlerinin maksimum verimlilik ve minimum emisyon ile gerçekleştirilmesini garanti altına alır.</p>
-                    <p data-i18n="brn_p2">Ecoflam brülörler, modüler tasarımları ve geniş kapasite aralıkları ile her türlü endüstriyel yakma uygulamasına uyum sağlar. Dizel, doğalgaz ve LPG yakıtlarıyla çalışabilen bu brülörler, otomatik ateşleme, oransal kontrol ve alev izleme sistemleri ile donatılmıştır. Enerji verimliliği %95'in üzerinde seyreder.</p>
-                    <p data-i18n="brn_p3">Riello brülörler ise 90 yılı aşan mühendislik birikimiyle, sessiz çalışma, düşük NOx emisyonu ve uzun servis ömrü sunmaktadır. Her iki marka da CE sertifikalı olup AB çevre standartlarına tam uyumludur. Fırınlarımızda hem birincil hem de ikincil yanma odaları için ayrı brülörler kullanılarak çift aşamalı, kontrollü yanma sağlanır.</p>
+            <div class="product-showcase animate-on-scroll">
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/yakma fırınları/1756192712743-852f55e7-80be-4004-bafc-6e0459c22b66.webp"
+                            alt="Çöp Yakma Fırını">
+                        <div class="machine-info">
+                            <span class="model-badge">Çöp Yakma</span>
+                            <h4>Genel Çöp Yakma Fırını</h4>
+                            <p>Belediye ve endüstriyel katı atıkların güvenli ve verimli bertarafı. Yüksek kapasiteli
+                                yanma odası.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/yakma fırınları/8585859Gemini_Generated_Image_6v3to46v3to46v3t-lighting-color-upscale-2x.webp"
+                            alt="Tıbbi Atık">
+                        <div class="machine-info">
+                            <span class="model-badge">Tıbbi Atık</span>
+                            <h4>Tıbbi Atık Yakma Fırını</h4>
+                            <p>Hastane, klinik ve laboratuvar atıklarının steril imhası. Düşük emisyon, yüksek sıcaklık.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/yakma fırınları/8585859Gemini_Generated_Image_tka9u0tka9u0tka9-color-lighting-upscale-2x.webp"
+                            alt="Hayvan Yakma">
+                        <div class="machine-info">
+                            <span class="model-badge">Hayvansal Atık</span>
+                            <h4>Hayvan Yakma Fırını</h4>
+                            <p>Veteriner klinikler, mezbahalar ve çiftlikler için hayvansal atık ve karkas bertarafı.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/yakma fırınları/858585Gemini_Generated_Image_32o6h632o6h632o6-color-upscale-2x.webp"
+                            alt="Mobil Yakma">
+                        <div class="machine-info">
+                            <span class="model-badge">Mobil</span>
+                            <h4>Mobil Yakma Fırını</h4>
+                            <p>Taşınabilir yakma çözümü. Uzak bölgeler ve saha operasyonları için ideal.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/yakma fırınları/858585Gemini_Generated_Image_j2p0zxj2p0zxj2p0-lighting-color-upscale-2x.webp"
+                            alt="Askı Temizleme">
+                        <div class="machine-info">
+                            <span class="model-badge">Askı Temizleme</span>
+                            <h4>Askı Temizleme Fırını</h4>
+                            <p>Boya ve kaplama sektörü için askı ve aparat temizleme sistemleri.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/yakma fırınları/undefined_Ultra_realistic_4K_s (1).webp"
+                            alt="Yüksek Kapasite">
+                        <div class="machine-info">
+                            <span class="model-badge">Yüksek Kapasite</span>
+                            <h4>Yüksek Kapasiteli Yakma Fırını</h4>
+                            <p>Büyük ölçekli sanayi tesisleri ve belediyeler için maksimum kapasite yakma sistemi.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="split-visual animate-on-scroll">
-                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/tıbbi yakma fırını/gemini-2.5-flash-image-preview (nano-banana)_Bu_sürgülü_kapak_sis.webp" alt="Brülör Sistemi">
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== BANNER ===== -->
-    <div class="banner-section">
-        <div class="container"><p class="banner-text animate-on-scroll" data-i18n="banner_text">"Geri dönüşümün en önemli kaynak olduğu prensibinden yola çıkarak, doğru ve dürüst olmaktan taviz vermeden büyüyoruz."</p></div>
-    </div>
-
-    <!-- ===== 6. MEDICAL WASTE (Full-Width Split) ===== -->
-    <section class="section" id="s-medical">
-        <div class="wide-split">
-            <div class="split-content animate-on-scroll">
-                <div class="content-block">
-                    <span class="section-tag" data-i18n="med_tag">Tıbbi Atık Yakma Fırınları</span>
-                    <h2><span data-i18n="med_title_1">Tıbbi Atık</span><br><span class="highlight" data-i18n="med_title_2">Yakma Sistemleri</span></h2>
-                    <p data-i18n="med_p1">Tıbbi atıklar, hastanelerde, kliniklerde, laboratuvarlarda, veteriner muayenehanelerinde ve eczanelerde günlük olarak üretilen, bulaşıcı hastalık riski taşıyan tehlikeli atıklardır. Kullanılmış enjektörler, kan ürünleri, ameliyat kalıntıları, patuolojik atıklar ve kimyasal maddeler bu kategoriye girer.</p>
-                    <p data-i18n="med_p2">Bu atıkların çevreye ve insan sağlığına zarar vermeden bertaraf edilmesi yasal bir zorunluluktur. Dünya Sağlık Örgütü (WHO) ve Avrupa Birliği düzenlemeleri, tıbbi atıkların minimum 850°C sıcaklıkta ve en az 2 saniye kalış süresiyle yakılmasını gerektirmektedir.</p>
-                    <p data-i18n="med_p3">MT Makina'nın tıbbi atık yakma fırınları, çift yanma odası teknolojisi ile bu gereksinimleri fazlasıyla karşılar. Birincil odada 650–950°C, ikincil odada 850–1200°C sıcaklıkla çalışan fırınlarımız, tıbbi atıkları steril kül haline dönüştürür. CE sertifikalı fırınlarımız, AB Direktifi 2000/76/EC'ye tam uyumludur.</p>
-                    <p data-i18n="med_p4">Küçük kliniklerden devlet hastanelerine, üniversite araştırma merkezlerinden askeri sağlık tesislerine kadar geniş bir yelpazede hizmet veren modellerimiz mevcuttur. 80 kg/saat'ten 400 kg/saat'e kadar kapasite seçenekleri sunuyoruz.</p>
+            <div class="feature-list animate-on-scroll">
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                    </svg>
+                    <span>Tıbbi Atık İmhası</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                    </svg>
+                    <span>Hayvansal Atık Bertarafı</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="10" rx="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <span>Endüstriyel Atık</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3h18v18H3z" />
+                        <path d="M9 3v18" />
+                        <path d="M15 3v18" />
+                        <path d="M3 9h18" />
+                        <path d="M3 15h18" />
+                    </svg>
+                    <span>Çöp Yakma</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+                    </svg>
+                    <span>Mobil Fırın Çözümleri</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 6v6l4 2" />
+                    </svg>
+                    <span>0 Emisyon Teknolojisi</span>
                 </div>
             </div>
-            <div class="split-visual animate-on-scroll">
-                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/tıbbi yakma fırını/1.webp" alt="Tıbbi Atık Yakma Fırını">
-            </div>
         </div>
     </section>
 
-    <!-- GIF Pair 3 -->
-    <div class="gif-pair animate-on-scroll">
-        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/Wideangle_shot_in_202509041649_kqpca-ezgif.com-video-to-gif-converter.gif" alt="Geniş Açı"></div>
-        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/Slow_cinematic_dolly_202509111254_m8oeq-ezgif.com-video-to-gif-converter.gif" alt="Dolly"></div>
-    </div>
-
-    <!-- ===== 7. GENERAL/INDUSTRIAL (Full-Width Split Reverse) ===== -->
-    <section class="section dark-bg" id="s-industrial">
-        <div class="wide-split reverse">
-            <div class="split-content animate-on-scroll">
-                <div class="content-block">
-                    <span class="section-tag" data-i18n="gen_tag">Genel & Endüstriyel Yakma Fırınları</span>
-                    <h2><span data-i18n="gen_title_1">Çöp ve Endüstriyel Atık</span><br><span class="highlight" data-i18n="gen_title_2">Yakma Sistemleri</span></h2>
-                    <p data-i18n="gen_p1">Belediye katı atıkları, endüstriyel üretim süreçlerinden kaynaklanan atıklar ve tehlikeli maddeler, düzenli depolama yerine yakma yöntemiyle çok daha güvenli ve verimli şekilde bertaraf edilebilir. Yakma teknolojisi, atık hacmini %95'e kadar azaltarak depolama alanı ihtiyacını minimize eder.</p>
-                    <p data-i18n="gen_p2">MT Makina'nın genel amaçlı yakma fırınları, çeşitli atık türlerini aynı fırında güvenle yakabilecek şekilde tasarlanmıştır. Organize sanayi bölgeleri, belediye atık bertaraf tesisleri, fabrikalar ve enerji geri kazanım projeleri için ideal çözümler sunar.</p>
-                    <p data-i18n="gen_p3">Yüksek kapasiteli modellerimiz (YF-300T ve YF-400T), endüstriyel ölçekte sürekli operasyon için tasarlanmış olup, SCADA entegrasyonu, otomatik besleme ve enerji geri kazanım seçenekleri ile donatılabilir. Bu sayede atık bertarafı aynı zamanda bir enerji kaynağına dönüşür.</p>
-                </div>
-            </div>
-            <div class="split-visual animate-on-scroll">
-                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/Çöp yakma fırını/mt-makina-sahne-1 (4).webp" alt="Endüstriyel Yakma Fırını">
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 8. MOBILE & ANIMAL (Full-Width Split) ===== -->
-    <section class="section" id="s-mobile">
-        <div class="wide-split">
-            <div class="split-content animate-on-scroll">
-                <div class="content-block">
-                    <span class="section-tag" data-i18n="mob_tag">Özel Çözümler</span>
-                    <h2><span data-i18n="mob_title_1">Mobil Fırınlar &</span><br><span class="highlight" data-i18n="mob_title_2">Hayvansal Atık Sistemleri</span></h2>
-                    <p data-i18n="mob_p1">Mobil yakma fırınları, sabit tesis kurulması mümkün olmayan veya ekonomik olmayan bölgelerde atık bertarafı ihtiyacını karşılamak üzere geliştirilmiştir. Konteyner veya treyler üzerine monte edilen bu sistemler, herhangi bir lokasyona taşınabilir ve kısa sürede kurularak operasyona hazır hale gelir.</p>
-                    <p data-i18n="mob_p2">Askeri üsler, mülteci kampları, uzak kırsal bölgeler, afet bölgeleri ve geçici sağlık tesisleri için ideal olan mobil fırınlarımız, sabit modellerin tüm özelliklerine sahiptir: çift yanma odası, PLC kontrol, baca gazı arıtma ve düşük emisyon değerleri.</p>
-                    <p data-i18n="mob_p3">Hayvansal atık yakma fırınları ise veteriner klinikleri, mezbahalar, çiftlikler ve hayvancılık tesisleri için tasarlanmıştır. Bulaşıcı hastalık riski taşıyan hayvan karkaslarının güvenle bertarafını sağlar. Özellikle kuş gribi, şap hastalığı gibi salgın dönemlerinde hayati öneme sahiptir.</p>
-                </div>
-            </div>
-            <div class="split-visual animate-on-scroll">
-                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/mobil yakma fırınları/mt-makina-sahne-1.webp" alt="Mobil Yakma Fırını">
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 9. COMPARISON TABLE ===== -->
-    <section class="section auto-height dark-bg" id="s-models">
+    <!-- SECTION 6: AYRIŞTIRMA SİSTEMLERİ - Genişletilmiş -->
+    <section class="section product-detail-section" id="section-ayristirma">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <span class="section-tag" data-i18n="comp_tag">Model Karşılaştırma</span>
-                <h2><span data-i18n="comp_title_1">Tüm Modeller,</span> <span class="highlight" data-i18n="comp_title_2">Tek Bakışta</span></h2>
-                <p data-i18n="comp_desc">İhtiyacınıza en uygun modeli seçmeniz için tüm teknik özellikleri karşılaştırın.</p>
-            </div>
-            <p class="table-scroll-hint">👈 Tüm modelleri görmek için kaydırın 👉</p>
-            <div class="comparison-table-wrapper animate-on-scroll">
-                <table class="comparison-table">
-                    <thead><tr>
-                        <th data-i18n="col_spec">Özellik</th>
-                        <th>YF-80T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
-                        <th>YF-100T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
-                        <th>YF-150T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
-                        <th>YF-300T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
-                        <th>YF-400T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
-                    </tr></thead>
-                    <tbody>
-                        <tr><td data-i18n="lbl_capacity">Yakma Kapasitesi</td><td>80 kg/saat</td><td>100 kg/saat</td><td>150 kg/saat</td><td>300 kg/saat</td><td>400 kg/saat</td></tr>
-                        <tr><td data-i18n="lbl_primary_temp">Birincil Yanma Sıcaklığı</td><td>650–850 °C</td><td>650–850 °C</td><td>700–900 °C</td><td>750–950 °C</td><td>800–1000 °C</td></tr>
-                        <tr><td data-i18n="lbl_secondary_temp">İkincil Yanma Sıcaklığı</td><td>850–1100 °C</td><td>850–1100 °C</td><td>900–1200 °C</td><td>950–1200 °C</td><td>1000–1200 °C</td></tr>
-                        <tr><td data-i18n="lbl_primary_chamber">Birincil Yanma Odası</td><td>1.8 m³</td><td>2.2 m³</td><td>3.0 m³</td><td>5.5 m³</td><td>7.0 m³</td></tr>
-                        <tr><td data-i18n="lbl_secondary_chamber">İkincil Yanma Odası</td><td>0.9 m³</td><td>1.1 m³</td><td>1.5 m³</td><td>2.8 m³</td><td>3.5 m³</td></tr>
-                        <tr><td data-i18n="lbl_primary_burner">Birincil Brülör Gücü</td><td>120 kW</td><td>175 kW</td><td>250 kW</td><td>450 kW</td><td>600 kW</td></tr>
-                        <tr><td data-i18n="lbl_secondary_burner">İkincil Brülör Gücü</td><td>60 kW</td><td>90 kW</td><td>130 kW</td><td>230 kW</td><td>300 kW</td></tr>
-                        <tr><td data-i18n="lbl_fuel">Yakıt Türü</td><td colspan="5" data-i18n="fuel_val">Dizel / Doğalgaz / LPG</td></tr>
-                        <tr><td data-i18n="lbl_chimney">Baca (Yükseklik / Çap)</td><td>8 m / Ø400</td><td>10 m / Ø450</td><td>12 m / Ø500</td><td>15 m / Ø600</td><td>18 m / Ø700</td></tr>
-                        <tr><td data-i18n="lbl_dimensions">Dış Boyutlar (GxDxY)</td><td>3200×1600×3800</td><td>3800×1800×4200</td><td>4500×2200×4800</td><td>6200×2800×5500</td><td>7500×3200×6000</td></tr>
-                        <tr><td data-i18n="lbl_weight">Ağırlık</td><td>4.500 kg</td><td>5.800 kg</td><td>7.500 kg</td><td>12.000 kg</td><td>16.500 kg</td></tr>
-                        <tr><td data-i18n="lbl_power">Elektrik Bağlantısı</td><td>380V/15kW</td><td>380V/18kW</td><td>380V/25kW</td><td>380V/45kW</td><td>380V/60kW</td></tr>
-                        <tr><td data-i18n="lbl_loading">Yükleme Sistemi</td><td data-i18n="loading_manual" colspan="2">Manuel</td><td data-i18n="loading_auto" colspan="3">Otomatik Hidrolik</td></tr>
-                        <tr><td data-i18n="lbl_control">Kontrol Sistemi</td><td data-i18n="control_plc" colspan="5">PLC Dokunmatik Panel</td></tr>
-                        <tr><td data-i18n="lbl_emission">Emisyon Standardı</td><td data-i18n="emission_eu" colspan="5">AB 2000/76/EC</td></tr>
-                    </tbody>
-                </table>
+                <span class="section-tag gold">Ürün Grubu</span>
+                <h2>Ayrıştırma <span class="highlight">Sistemleri</span></h2>
+                <p class="product-long-desc">MT Makina ayrıştırma sistemleri, atık yönetimi tesislerinde malzeme ayırma
+                    ve boyutlandırma işlemlerinde kullanılan yüksek verimli ekipmanlardır. Döner tamburlu tromel
+                    elekler, mobil tromel sistemleri, manyetik konveyörler ve metal seperatörler ile karma atıkların
+                    etkin bir şekilde ayrıştırılmasını sağlarız. Bu sistemler kompost tesisleri, ambalaj atık tesisleri,
+                    inşaat yıkım atıkları ve belediye katı atık tesislerinde yaygın olarak kullanılmaktadır.</p>
             </div>
 
-            <!-- Mobile Model Cards -->
-            <div class="mobile-model-cards">
-                <div class="model-card"><h3 class="model-card-title">YF-80T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>80 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>650–850 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>850–1100 °C</strong></li><li><span>Birincil Oda</span><strong>1.8 m³</strong></li><li><span>İkincil Oda</span><strong>0.9 m³</strong></li><li><span>Brülör</span><strong>120 / 60 kW</strong></li><li><span>Ağırlık</span><strong>4.500 kg</strong></li><li><span>Elektrik</span><strong>380V/15kW</strong></li><li><span>Yükleme</span><strong>Manuel</strong></li></ul></div>
-                <div class="model-card"><h3 class="model-card-title">YF-100T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>100 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>650–850 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>850–1100 °C</strong></li><li><span>Birincil Oda</span><strong>2.2 m³</strong></li><li><span>İkincil Oda</span><strong>1.1 m³</strong></li><li><span>Brülör</span><strong>175 / 90 kW</strong></li><li><span>Ağırlık</span><strong>5.800 kg</strong></li><li><span>Elektrik</span><strong>380V/18kW</strong></li><li><span>Yükleme</span><strong>Manuel</strong></li></ul></div>
-                <div class="model-card"><h3 class="model-card-title">YF-150T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>150 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>700–900 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>900–1200 °C</strong></li><li><span>Birincil Oda</span><strong>3.0 m³</strong></li><li><span>İkincil Oda</span><strong>1.5 m³</strong></li><li><span>Brülör</span><strong>250 / 130 kW</strong></li><li><span>Ağırlık</span><strong>7.500 kg</strong></li><li><span>Elektrik</span><strong>380V/25kW</strong></li><li><span>Yükleme</span><strong>Oto. Hidrolik</strong></li></ul></div>
-                <div class="model-card"><h3 class="model-card-title">YF-300T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>300 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>750–950 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>950–1200 °C</strong></li><li><span>Birincil Oda</span><strong>5.5 m³</strong></li><li><span>İkincil Oda</span><strong>2.8 m³</strong></li><li><span>Brülör</span><strong>450 / 230 kW</strong></li><li><span>Ağırlık</span><strong>12.000 kg</strong></li><li><span>Elektrik</span><strong>380V/45kW</strong></li><li><span>Yükleme</span><strong>Oto. Hidrolik</strong></li></ul></div>
-                <div class="model-card"><h3 class="model-card-title">YF-400T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>400 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>800–1000 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>1000–1200 °C</strong></li><li><span>Birincil Oda</span><strong>7.0 m³</strong></li><li><span>İkincil Oda</span><strong>3.5 m³</strong></li><li><span>Brülör</span><strong>600 / 300 kW</strong></li><li><span>Ağırlık</span><strong>16.500 kg</strong></li><li><span>Elektrik</span><strong>380V/60kW</strong></li><li><span>Yükleme</span><strong>Oto. Hidrolik</strong></li></ul></div>
+            <!-- Döner Tamburlu Tromel Elek -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Döner Tamburlu Tromel Elek</h3>
+                <p class="product-long-desc">Döner tamburlu tromel elekler, silindirik yapısı ve farklı göz
+                    açıklığındaki elek panelleri sayesinde atıkları boyutlarına göre ayrıştırır. Yüksek kapasiteli
+                    işleme, düşük enerji tüketimi ve uzun ömürlü tasarımıyla öne çıkar. Kompost, inşaat atıkları ve
+                    karma atık ayrıştırma tesislerinde tercih edilir.</p>
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/Gemini_Generated_Image_6fitld6fitld6fit.webp"
+                            alt="Tromel Elek">
+                        <div class="machine-info">
+                            <span class="model-badge">Sabit Tip</span>
+                            <h4>Döner Tambur Tromel Elek</h4>
+                            <p>Yüksek kapasiteli boyutlandırma ve ayrıştırma. Farklı elek açıklıkları ile çok kademeli
+                                ayırma.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/1 (4).webp" alt="Tromel Elek">
+                        <div class="machine-info">
+                            <span class="model-badge">Endüstriyel</span>
+                            <h4>Yüksek Kapasite Tromel</h4>
+                            <p>Endüstriyel ölçekli tesisler için tasarlanmış, saatlik 50+ ton işleme kapasitesi.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/1 (5).webp" alt="Tromel Elek">
+                        <div class="machine-info">
+                            <span class="model-badge">Kompakt</span>
+                            <h4>Kompakt Tromel Elek</h4>
+                            <p>Orta ölçekli tesisler için ideal kompakt tasarım. Kolay kurulum ve bakım.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobil Tromel Elek -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Mobil Tromel Elek</h3>
+                <p class="product-long-desc">Mobil tromel elekler, tekerlekli veya paletli şasi üzerine monte edilerek
+                    saha içinde hareket edebilir. İnşaat yıkım alanları, maden sahaları ve geçici atık toplama
+                    noktalarında yerinde ayrıştırma imkanı sunar. Dizel veya elektrikli motor seçenekleri mevcuttur.</p>
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/Generated Image October 09, 2025 - 11_27AM.webp"
+                            alt="Mobil Tromel">
+                        <div class="machine-info">
+                            <span class="model-badge">Paletli</span>
+                            <h4>Paletli Mobil Tromel</h4>
+                            <p>Zorlu arazi koşulları için paletli şasi. Yüksek manevra kabiliyeti.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/Generated Image October 09, 2025 - 11_05AM.webp"
+                            alt="Mobil Tromel">
+                        <div class="machine-info">
+                            <span class="model-badge">Tekerlekli</span>
+                            <h4>Tekerlekli Mobil Tromel</h4>
+                            <p>Kolay taşıma ve hızlı kurulum. Farklı sahalar arası transfer için ideal.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/Generated Image October 09, 2025 - 1_04PM.webp"
+                            alt="Mobil Tromel">
+                        <div class="machine-info">
+                            <span class="model-badge">Hibrit</span>
+                            <h4>Hibrit Mobil Sistem</h4>
+                            <p>Dizel-elektrik hibrit tahrik. Düşük emisyon ve yüksek verimlilik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manyetik Konveyör -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Manyetik Konveyör</h3>
+                <p class="product-long-desc">Manyetik konveyörler, atık akışından demir içerikli metallerin otomatik
+                    olarak ayrılmasını sağlar. Güçlü mıknatıslar ve dayanıklı konveyör bant yapısı ile sürekli çalışma
+                    imkanı sunar. Geri dönüşüm tesisleri, hurda metal işleme ve belediye atık tesislerinde yaygın
+                    kullanılır.</p>
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/1 (17).webp" alt="Manyetik Konveyör">
+                        <div class="machine-info">
+                            <span class="model-badge">Overband</span>
+                            <h4>Overband Manyetik Seperatör</h4>
+                            <p>Konveyör üstü asma tip. Sürekli otomatik metal ayırma kapasitesi.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/1 (19).webp" alt="Manyetik Konveyör">
+                        <div class="machine-info">
+                            <span class="model-badge">Tambur</span>
+                            <h4>Manyetik Tambur</h4>
+                            <p>Konveyör baş tamburuna entegre. Yüksek verimli demir ayırma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metal Seperatör -->
+            <div class="product-showcase animate-on-scroll">
+                <h3 class="showcase-title">Metal Seperatör</h3>
+                <p class="product-long-desc">Metal seperatörler, hem demir içerikli (ferromagnetic) hem de demir
+                    içermeyen (alüminyum, bakır vb.) metallerin atık akışından ayrılmasını sağlar. Eddy akımı
+                    teknolojisi ile non-ferro metallerin de etkin bir şekilde ayrıştırılması mümkündür. Ambalaj atık
+                    tesisleri ve geri dönüşüm merkezlerinde kritik öneme sahiptir.</p>
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/1 (1).webp" alt="Metal Seperatör">
+                        <div class="machine-info">
+                            <span class="model-badge">Eddy Akımı</span>
+                            <h4>Eddy Akımı Seperatörü</h4>
+                            <p>Non-ferro metal ayırma. Alüminyum, bakır, pirinç ayrıştırma.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/1 (7).webp" alt="Metal Seperatör">
+                        <div class="machine-info">
+                            <span class="model-badge">Kombine</span>
+                            <h4>Kombine Metal Seperatör</h4>
+                            <p>Ferro ve non-ferro metalleri tek sistemde ayırma. Yüksek saflık oranı.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/mobil tromel elek/1 (8).webp" alt="Metal Seperatör">
+                        <div class="machine-info">
+                            <span class="model-badge">Sensörlü</span>
+                            <h4>Sensörlü Metal Dedektör</h4>
+                            <p>Hassas metal algılama. Otomatik reddetme sistemi ile entegre.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-list animate-on-scroll">
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+                        <path d="M21 3v6h-6" />
+                    </svg>
+                    <span>Döner Tamburlu Tromel Elek</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="3" width="15" height="13" />
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                        <circle cx="5.5" cy="18.5" r="2.5" />
+                        <circle cx="18.5" cy="18.5" r="2.5" />
+                    </svg>
+                    <span>Mobil Tromel Elek</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    </svg>
+                    <span>Manyetik Konveyör</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20" />
+                        <path d="M2 12h20" />
+                        <circle cx="12" cy="12" r="4" />
+                    </svg>
+                    <span>Metal Seperatör</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 10. REFERENCES ===== -->
-    <section class="section references-section" id="s-refs">
+    <!-- SECTION 7: BALYA PRESLERİ - Genişletilmiş -->
+    <section class="section product-detail-section dark-bg" id="section-balya">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <span class="section-tag" data-i18n="ref_tag">Güvenilir İş Ortaklıkları</span>
-                <h2><span data-i18n="ref_title_1">Global ve Kurumsal</span> <span class="highlight" data-i18n="ref_title_2">Referanslarımız</span></h2>
-                <p data-i18n="ref_desc">40'tan fazla ülkeye ihracat. Türkiye'nin en prestijli kurumları ve dünya markalarıyla çalışıyoruz.</p>
+                <span class="section-tag gold">Ürün Grubu</span>
+                <h2>Balya <span class="highlight">Presleri</span></h2>
+                <p class="product-long-desc">Yatay ve dikey balya presleri, hurda pres makineleri, kompaktör ve katı
+                    atık konteynerleri ile verimli sıkıştırma çözümleri. Kağıt, karton, plastik, metal ve tekstil gibi
+                    geri dönüştürülebilir malzemelerin sıkıştırılması ve depolama alanından tasarruf sağlanması için
+                    tasarlanmış sistemler. Hidrolik basınç teknolojisi, otomatik balya bağlama ve kolay bakım
+                    özellikleriyle donatılmıştır.</p>
             </div>
+
+            <div class="product-showcase animate-on-scroll">
+                <div class="machine-gallery full">
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/pres makinesi/Generated Image December 10, 2025 - 9_58AM.webp"
+                            alt="Balya Presi">
+                        <div class="machine-info">
+                            <span class="model-badge">Hurda Pres</span>
+                            <h4>Metal Hurda Balya Presi</h4>
+                            <p>Ağır metal hurda ve teneke sıkıştırma. Yüksek basınç ile kompakt balya.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/pres makinesi/yatay balya presi.png"
+                            alt="Yatay Balya">
+                        <div class="machine-info">
+                            <span class="model-badge">Yatay Tip</span>
+                            <h4>Yatay Balya Presi</h4>
+                            <p>Kağıt, karton ve plastik için yüksek kapasiteli yatay sıkıştırma.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/pres makinesi/kompaktor pres.png"
+                            alt="Kompaktör">
+                        <div class="machine-info">
+                            <span class="model-badge">Kompaktör</span>
+                            <h4>Sabit Kompaktör</h4>
+                            <p>Depolama alanından tasarruf için yüksek verimli atık sıkıştırma.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/pres makinesi/dikey balya presi.png"
+                            alt="Dikey Pres">
+                        <div class="machine-info">
+                            <span class="model-badge">Dikey Tip</span>
+                            <h4>Dikey Balya Presi</h4>
+                            <p>Sınırlı alanlar için kompakt dikey tasarım. Küçük işletmeler için ideal.</p>
+                        </div>
+                    </div>
+                    <div class="machine-card xl">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/makinegörseller/pres makinesi/saman presi.png"
+                            alt="Saman Presi">
+                        <div class="machine-info">
+                            <span class="model-badge">Saman Presi</span>
+                            <h4>Saman Balya Presi</h4>
+                            <p>Tarımsal atıklar ve saman için yüksek verimli balya sıkıştırma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-list animate-on-scroll">
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <line x1="3" y1="9" x2="21" y2="9" />
+                        <line x1="9" y1="21" x2="9" y2="9" />
+                    </svg>
+                    <span>Yatay Balya Presi</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 8v8" />
+                        <path d="M8 12h8" />
+                    </svg>
+                    <span>Hurda Pres</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                        <path d="M9 9h6v6H9z" />
+                    </svg>
+                    <span>Kompaktör</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 8h14M5 8a2 2 0 1 1 0 4 2 2 0 0 1 0-4M5 8v10c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V8" />
+                        <path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                    </svg>
+                    <span>Katı Atık Konteyner</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    <span>Saman Presi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: TESİSLER - SVG İkonlarla -->
+    <section class="section product-detail-section" id="section-tesisler">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag gold">Komple Çözümler</span>
+                <h2>Tesis <span class="highlight">Üretimleri</span></h2>
+                <p class="product-long-desc">Türkiye'nin yerli ve güvenilir atık yönetim çözümleri. Anahtar teslim tesis
+                    projeleri ile tam entegre sistemler. Fizibilite çalışmasından kurulum ve devreye almaya kadar tüm
+                    süreçlerde profesyonel mühendislik hizmeti. Her tesise özel tasarım ve kapasite planlaması.</p>
+            </div>
+
+            <div class="facilities-grid animate-on-scroll">
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21h18" />
+                            <path d="M5 21V7l8-4v18" />
+                            <path d="M19 21V11l-6-4" />
+                            <path d="M9 9v.01" />
+                            <path d="M9 12v.01" />
+                            <path d="M9 15v.01" />
+                            <path d="M9 18v.01" />
+                        </svg>
+                    </div>
+                    <h4>Ambalaj Atıkları Toplama Tesisi</h4>
+                    <p>Plastik, kağıt, cam ve metal ambalaj atıklarının ayrıştırılması ve geri kazanımı.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                            <line x1="6" y1="1" x2="6" y2="4" />
+                            <line x1="10" y1="1" x2="10" y2="4" />
+                            <line x1="14" y1="1" x2="14" y2="4" />
+                        </svg>
+                    </div>
+                    <h4>Gıda Atıkları Paket Ayırma</h4>
+                    <p>Son kullanma tarihi geçmiş gıda ürünlerinin ambalajından ayrıştırılması.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 10v6" />
+                            <path d="M12 10 7 5" />
+                            <path d="M12 10l5-5" />
+                            <path d="M8 22c-1.1 0-2-.9-2-2v-4c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v4c0 1.1-.9 2-2 2H8z" />
+                        </svg>
+                    </div>
+                    <h4>Kompost Gübre Üretim Tesisi</h4>
+                    <p>Organik atıklardan doğal gübre üretimi.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3 6 5 6 6 20 18 20 19 6 21 6" />
+                            <path d="M14 6V4a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v2" />
+                            <line x1="10" y1="11" x2="10" y2="17" />
+                            <line x1="14" y1="11" x2="14" y2="17" />
+                        </svg>
+                    </div>
+                    <h4>Çöp Ayıklama Tesisi</h4>
+                    <p>Karma atıkların ayrıştırılması ve geri kazanımı.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.5-1.5-1-5 1-7 0 3.5 1.5 6 4 6 2.5 0 3.5-2.5 2-5 1 1 5 2 5 6 0 4-4 6-8 6a2.5 2.5 0 0 0-2.5 2.5" />
+                            <path d="M12 22v-5" />
+                        </svg>
+                    </div>
+                    <h4>Katı Atık Yakma Tesisi</h4>
+                    <p>Bertaraf edilemez atıkların enerji geri kazanımlı yakılması.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                        </svg>
+                    </div>
+                    <h4>Tekstil Kumaş Parçalama</h4>
+                    <p>Tekstil atıklarının geri dönüşüme hazırlanması.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: REFERANSLAR -->
+    <section class="section references-section" id="section-references">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag gold">Güvenilir İş Ortaklıkları</span>
+                <h2>Global ve Kurumsal <span class="highlight">Referanslarımız</span></h2>
+                <p class="section-desc">40'tan fazla ülkeye ihracat. Türkiye'nin en prestijli kurumları ve dünya
+                    markalarıyla çalışıyoruz.</p>
+            </div>
+
             <div class="references-grid animate-on-scroll">
-                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row1">Kamu & Kurumsal</h4><div class="logos-row colorful">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/Seal_of_the_Turkish_Armed_Forces.webp" alt="TSK">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/Mitlogo (1).webp" alt="MİT">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/Logo_of_Ministry_of_Justice_(Turkey).svg.webp" alt="Adalet">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/Logo_of_Ministry_of_Health_(Turkey).webp" alt="Sağlık">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/turkiye-cumhuriyeti-icisleri-bakanligi-logo-png_seeklogo-345237.webp" alt="İçişleri">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/turkiye-cumhuriyet-merkez-bankasi-logo-png_seeklogo-181809.webp" alt="TCMB">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/ÖSYM.svg.webp" alt="ÖSYM">
-                </div></div>
-                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row2">Savunma & Teknoloji</h4><div class="logos-row colorful">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/ASELSAN_logo.svg.webp" alt="ASELSAN">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/TEI_Logo.webp" alt="TEI">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/Makine_ve_Kimya_Endüstrisi_Kurumu_logo.svg.webp" alt="MKE">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/Bosch-logo.svg.webp" alt="Bosch">
-                </div></div>
-                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row3">Global Markalar</h4><div class="logos-row colorful">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/bp-logo-png_seeklogo-21836.webp" alt="BP">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/castrollogo.webp" alt="Castrol">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/PepsiCo_logo.svg.webp" alt="PepsiCo">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/Humana.webp" alt="Humana">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/1200px-Mercedes_Benz_Logo_11.webp" alt="Mercedes">
-                </div></div>
-                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row4">Sanayi & Holding</h4><div class="logos-row colorful">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/Acarsan_Holding_Logo.webp" alt="Acarsan">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/hun-holdng.webp" alt="Hun">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/golden-rose.webp" alt="Golden Rose">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/melodi-cikolata-logo-png_seeklogo-223826.webp" alt="Melodi">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/betek_boya-logo_brandlogos.net_slepl.webp" alt="Betek">
-                </div></div>
-                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row5">Uluslararası</h4><div class="logos-row colorful">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/İGA_Havalimanı_İşletmesi_A.Ş._logo.svg.webp" alt="İGA">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/TAV.webp" alt="TAV">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/MAXROYAL.webp" alt="Max Royal">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/ARTVINlogo.webp" alt="Artvin">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/MALATYA.webp" alt="Malatya">
-                    <img loading="lazy" src="./yakma fırını/referansların logosu/tuzla-belediyesi-yeni-logo.webp" alt="Tuzla">
-                </div></div>
+                <!-- Row 1 - Kurumsal -->
+                <div class="reference-row">
+                    <h4 class="row-title">Kamu & Kurumsal</h4>
+                    <div class="logos-row colorful">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/genelkurmay-baskanligi-logo.webp"
+                            alt="Genelkurmay Başkanlığı">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/mit-logo.webp" alt="MİT">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/adalet-bakanligi-logo.webp"
+                            alt="Adalet Bakanlığı">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/saglik-bakanligi-logo.webp"
+                            alt="Sağlık Bakanlığı">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/disisleri-bakanligi-logo.webp"
+                            alt="Dışişleri Bakanlığı">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/tcmb-logo.webp" alt="TCMB">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/osym-logo.webp" alt="ÖSYM">
+                    </div>
+                </div>
+
+                <!-- Row 2 - Savunma & Teknoloji -->
+                <div class="reference-row">
+                    <h4 class="row-title">Savunma & Teknoloji</h4>
+                    <div class="logos-row colorful">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/aselsan-logo.webp" alt="ASELSAN">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/tei-logo.webp" alt="TEI">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/mke-logo.webp" alt="MKE">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/bosch-logo.webp" alt="Bosch">
+                    </div>
+                </div>
+
+                <!-- Row 3 - Global Markalar -->
+                <div class="reference-row">
+                    <h4 class="row-title">Global Markalar</h4>
+                    <div class="logos-row colorful">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/bp-logo.webp" alt="BP">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/castrol-logo.webp" alt="Castrol">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/pepsico-logo.webp" alt="PepsiCo">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/remondis-logo.webp" alt="Remondis">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/humana-logo.webp" alt="Humana">
+                    </div>
+                </div>
+
+                <!-- Row 4 - Havacılık & Turizm -->
+                <div class="reference-row">
+                    <h4 class="row-title">Havacılık & Turizm</h4>
+                    <div class="logos-row colorful">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/iga-logo.webp" alt="İGA">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/tav-havalimanlari-logo.webp"
+                            alt="TAV Havalimanları">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/max-royal-resort-logo.webp"
+                            alt="Max Royal Resort">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/ic-hotels-logo.webp" alt="IC Hotels">
+                    </div>
+                </div>
+
+                <!-- Row 5 - Sanayi & Holding -->
+                <div class="reference-row">
+                    <h4 class="row-title">Sanayi & Holding</h4>
+                    <div class="logos-row colorful">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/orhan-holding-logo.webp" alt="Orhan Holding">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/hun-holding-logo.webp" alt="Hun Holding">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/bolu-cimento-logo.webp" alt="Bolu Çimento">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/golden-rose-logo.webp" alt="Golden Rose">
+                        <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/melodi-cikolata-logo.webp"
+                            alt="Melodi Çikolata">
+                    </div>
+                </div>
+            </div>
+
+            <!-- International Clients -->
+            <div class="international-clients animate-on-scroll">
+                <h4 class="row-title">Uluslararası İş Ortakları</h4>
+                <div class="logos-row colorful">
+                    <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/irak-saglik-bakanligi-logo.webp"
+                        alt="Irak Sağlık Bakanlığı">
+                    <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/suudi-arabistan-hac-bakanligi-logo.webp"
+                        alt="Suudi Arabistan Hac Bakanlığı">
+                    <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/baltic-flax-logo.webp" alt="Baltic Flax">
+                    <img loading="lazy" src="./assets/mtmakinagenelsunum/referanslar/seha-logo.webp" alt="SEHA">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 11. CONTACT ===== -->
-    <section class="section contact-section" id="s-contact">
+    <!-- SECTION 9: NEDEN BİZ -->
+    <section class="section why-us-section" id="section-why-us">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag gold">Farkımız</span>
+                <h2>Neden <span class="highlight">MT Makina?</span></h2>
+            </div>
+
+            <div class="why-grid animate-on-scroll">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3>Sektörde Öncü Çözümler</h3>
+                    <p>Geri dönüşüm ve atık yönetimi alanında yenilikçi ve çevre dostu çözümler sunarak sektör
+                        lideriyiz.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3>Geniş Ürün Yelpazesi</h3>
+                    <p>Parçalama, ayrıştırma, balya pres, yakma fırını ve tesis üretimleriyle tüm ihtiyaçlara cevap.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon gold">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </div>
+                    <h3>Müşteri Odaklılık</h3>
+                    <p>Her ihtiyaca özel çözümler sunuyor ve kaliteyi sürekli iyileştiriyoruz.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <h3>Kalite ve Güven</h3>
+                    <p>En yüksek kalite standartlarında üretim, uzun ömürlü ve güvenilir kullanım.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                            <line x1="12" y1="22.08" x2="12" y2="12" />
+                        </svg>
+                    </div>
+                    <h3>İnovasyon & Ar-Ge</h3>
+                    <p>Sürekli Ar-Ge yatırımı ile çevre dostu ve verimli teknolojiler geliştiriyoruz.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                        </svg>
+                    </div>
+                    <h3>Global Deneyim</h3>
+                    <p>40'tan fazla ülkeye ihracat. Uluslararası standartlarda hizmet.</p>
+                </div>
+            </div>
+
+            <!-- Key Statistics -->
+            <div class="key-stats animate-on-scroll">
+                <div class="key-stat">
+                    <span class="key-number" data-target="100">100</span><span class="key-suffix">%</span>
+                    <span class="key-label">Yerli Üretim</span>
+                </div>
+                <div class="key-stat">
+                    <span class="key-number" data-target="7">7</span><span class="key-suffix">/24</span>
+                    <span class="key-label">Teknik Destek</span>
+                </div>
+                <div class="key-stat">
+                    <span class="key-number" data-target="2">2</span><span class="key-suffix">+ yıl</span>
+                    <span class="key-label">Garanti Süresi</span>
+                </div>
+                <div class="key-stat">
+                    <span class="key-number" data-target="98">98</span><span class="key-suffix">%</span>
+                    <span class="key-label">Müşteri Memnuniyeti</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: İLETİŞİM -->
+    <section class="section contact-section" id="section-contact">
         <div class="container">
             <div class="contact-wrapper animate-on-scroll">
                 <div class="contact-header">
-                    <span class="section-tag" data-i18n="ct_tag">İletişim</span>
-                    <h2><span data-i18n="ct_title_1">Geleceğe</span> <span class="highlight" data-i18n="ct_title_2">Birlikte</span> <span data-i18n="ct_title_3">Adım Atalım</span></h2>
-                    <p class="contact-intro" data-i18n="ct_intro">Yakma fırını ihtiyaçlarınız için uzman ekibimizle iletişime geçin.</p>
+                    <span class="section-tag gold">İletişim</span>
+                    <h2>Geleceğe <span class="highlight">Birlikte</span> Adım Atalım</h2>
+                    <p class="contact-intro">Kendini sürekli geliştiren, dinamik ve özgün bir çözüm ortağı olarak,
+                        kaynaklarınızın değerini artırmak için buradayız.</p>
                 </div>
+
                 <div class="contact-grid">
-                    <div class="contact-card"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.09.54.2 1.08.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.73.5 2.27.61 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3 data-i18n="ct_phone">Telefon</h3><p>+90 850 259 01 66</p><p>+90 212 613 31 82</p></div>
-                    <div class="contact-card"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div><h3 data-i18n="ct_whatsapp">WhatsApp</h3><p>+90 542 310 99 30</p></div>
-                    <div class="contact-card"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3 data-i18n="ct_email">E-posta</h3><p>info@mtmakina.com.tr</p></div>
-                    <div class="contact-card"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3 data-i18n="ct_address">Adres</h3><p data-i18n="ct_address_val">Cumhuriyet Mah. Nazım Hikmet Blv. 1983 Sk. Kent Palas 2 K:7 D:85-86 Esenyurt / İSTANBUL</p></div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                        </div>
+                        <h3>Telefon</h3>
+                        <p>+90 850 259 01 66</p>
+                        <p>+90 212 613 31 82</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                            </svg>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>+90 542 310 99 30</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <h3>E-posta</h3>
+                        <p>info@mtmakina.com.tr</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <h3>Adres</h3>
+                        <p>Cumhuriyet Mah. Nazım Hikmet Blv. 1983 Sk. Kent Palas 2 K:7 D:85-86 Esenyurt/İSTANBUL</p>
+                    </div>
                 </div>
+
                 <div class="cta-buttons">
-                    <a href="mailto:info@mtmakina.com.tr?subject=Yakma Fırını Teklif Talebi" class="cta-button primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span data-i18n="ct_cta1">Teklif İsteyin</span></a>
-                    <a href="tel:+908502590166" class="cta-button secondary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.09.54.2 1.08.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.73.5 2.27.61 2.81.7A2 2 0 0122 16.92z"/></svg><span data-i18n="ct_cta2">Hemen Arayın</span></a>
-                    <a href="https://www.mtmakina.com.tr" class="cta-button secondary" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-i18n="ct_web">Web Sitemizi Ziyaret Edin</span></a>
+                    <a href="https://www.mtmakina.com.tr" class="cta-button primary" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                        </svg>
+                        Web Sitemizi Ziyaret Edin
+                    </a>
+                    <a href="tel:+908502590166" class="cta-button secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                        Hemen Arayın
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CLOSING -->
+    <!-- Closing -->
     <section class="section closing-section">
         <div class="closing-content">
-            <p class="closing-message animate-on-scroll"><span data-i18n="cl_msg1">"Dönüştürülebilir Gelecek,</span><br><span class="highlight" data-i18n="cl_msg2">Güvenli Çözümler."</span></p>
-            <p class="closing-submessage animate-on-scroll" data-i18n="cl_sub">Pratik Düşünüyor • Verimli Tasarlıyor • Kaliteli Üretiyoruz</p>
-            <div class="closing-logo animate-on-scroll"><img src="./yakma fırını/mt-makina-logo.webp" alt="MT Makina"></div>
-            <p class="closing-tagline animate-on-scroll" data-i18n="cl_tag">MT Makina — Global Teknoloji, Yerel Güç</p>
+            <p class="closing-message animate-on-scroll">
+                "Dönüştürülebilir Gelecek,<br><span class="highlight">Güvenli Çözümler.</span>"
+            </p>
+            <p class="closing-submessage animate-on-scroll">Pratik Düşünüyor • Verimli Tasarlıyor • Kaliteli Üretiyoruz
+            </p>
+            <div class="closing-logo animate-on-scroll">
+                <img loading="lazy" src="./assets/mtmakinagenelsunum/Mt Makina-Logo.webp" alt="MT Makina">
+            </div>
+            <p class="closing-tagline animate-on-scroll">MT Makina — Global Teknoloji, Yerel Güç</p>
         </div>
     </section>
 
-    <div class="lightbox-overlay" id="lightbox"><img src="" alt=""><button class="lightbox-close">✕</button></div>
-    <script src="yakma-firini-translations.js"></script>
-    <script src="yakma-firini.js"></script>
+    <script src="translations.js"></script>
+    <script src="i18n-init.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
