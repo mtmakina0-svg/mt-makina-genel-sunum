@@ -1,0 +1,7 @@
+node_modules
+convert-to-webp.js
+update-html-webp.js
+package.json
+package-lock.json
+.vercel
+*.pdf

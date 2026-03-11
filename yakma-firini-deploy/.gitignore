@@ -1,0 +1,6 @@
+node_modules
+.vercel
+*.pdf
+*.pptx
+*.rtf
+*.png

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Makina | Yakma Fırınları — Incineration Systems</title>
+    <meta name="description" content="MT Makina yakma fırınları: tıbbi atık, hayvansal atık, endüstriyel atık yakma fırınları. CE sertifikalı, AB standartlarına uygun.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="yakma-firini.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="tr" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+    <nav class="nav-dots" id="navDots">
+        <div class="dot active" data-section="0" title="Giriş"></div>
+        <div class="dot" data-section="1" title="Hakkımızda"></div>
+        <div class="dot" data-section="2" title="Teknoloji"></div>
+        <div class="dot" data-section="3" title="Nasıl Çalışır"></div>
+        <div class="dot" data-section="4" title="Neden Biz"></div>
+        <div class="dot" data-section="5" title="Tıbbi Atık"></div>
+        <div class="dot" data-section="6" title="Endüstriyel"></div>
+        <div class="dot" data-section="7" title="Mobil"></div>
+        <div class="dot" data-section="8" title="Modeller"></div>
+        <div class="dot" data-section="9" title="Referanslar"></div>
+        <div class="dot" data-section="10" title="İletişim"></div>
+    </nav>
+    <div class="timer-display" id="timerDisplay"><span>⏱</span><span id="timerText">00:00</span></div>
+    <div class="presentation-controls">
+        <button class="control-btn" id="btnPrev"><span>‹</span></button>
+        <button class="control-btn" id="btnFullscreen"><span>⛶</span></button>
+        <button class="control-btn" id="btnNext"><span>›</span></button>
+    </div>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="section hero-section" id="s-hero">
+        <div class="hero-bg"><img src="./yakma fırını/Yakma fırınları görselleri/tıbbi yakma fırını/yakmafırını.webp" alt="Yakma Fırını"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <img class="hero-logo" src="./yakma fırını/mt-makina-logo.webp" alt="MT Makina">
+            <p class="hero-pre-title" data-i18n="hero_pre">20+ Yıllık Deneyim • %100 Yerli Üretim • 40+ Ülkeye İhracat</p>
+            <h1 class="hero-title"><span data-i18n="hero_title_1">Yakma Fırınlarında</span><br><span class="highlight" data-i18n="hero_title_2">Güvenilir Çözüm Ortağınız</span></h1>
+            <p class="hero-subtitle" data-i18n="hero_sub">Tıbbi Atık • Hayvansal Atık • Endüstriyel Atık • Çöp Yakma • Mobil Fırınlar</p>
+            <p class="hero-desc" data-i18n="hero_desc">AB standartlarına uygun, düşük emisyonlu, yüksek verimli yakma fırınları ile atık bertaraf süreçlerinizde güvenilir çözüm ortağınız.</p>
+            <div class="hero-badges">
+                <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-i18n="hero_b1">CE Sertifikalı</span></div>
+                <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="hero_b2">Sıfır Emisyon</span></div>
+                <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.09.54.2 1.08.7 2.81 2a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.73.5 2.27.61 2.81.7A2 2 0 0122 16.92z"/></svg><span data-i18n="hero_b3">7/24 Destek</span></div>
+                <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg><span data-i18n="hero_b4">Anahtar Teslim</span></div>
+            </div>
+            <div class="scroll-indicator"><div class="scroll-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div></div>
+        </div>
+    </section>
+
+    <!-- ===== 2. ABOUT (Full-Width Split) ===== -->
+    <section class="section" id="s-about">
+        <div class="wide-split">
+            <div class="split-content animate-on-scroll">
+                <div class="content-block">
+                    <span class="section-tag" data-i18n="about_tag">Biz Kimiz?</span>
+                    <h2><span data-i18n="about_title_1">Türkiye'nin Yakma Fırını</span> <span class="highlight" data-i18n="about_title_2">Teknoloji Lideri</span></h2>
+                    <p class="lead" data-i18n="about_p1">MT Makina, 20 yılı aşkın süredir Türkiye'de yerli üretim yapan, geri dönüşüm ve atık yönetimi alanında uzmanlaşmış bir firmadır. Parçalama makineleri, ayrıştırma sistemleri, balya presleri, yakma fırınları ve çeşitli tesislerin üretiminde lider konumdayız.</p>
+                    <p data-i18n="about_p2">Gücümüzü, profesyonel kadromuzdan ve makine mühendisi olan kurucumuzdan alıyoruz. Geri dönüşümün en önemli kaynak olduğu prensibinden yola çıkarak, tüm çalışanlarımızla kenetlenmiş bir aile anlayışı içinde, doğru ve dürüst olmaktan taviz vermeden büyümemizi sürdürüyoruz.</p>
+                    <p data-i18n="about_p3">Çağdaş çalışma alanlarımız ve her geçen gün genişleyen modern makine parkurumuz ile sektörün en iyisi olma yolunda emin adımlarla ilerliyoruz.</p>
+                    <div class="about-stats">
+                        <div class="stat-item"><span class="stat-number" data-target="20">0</span><span class="stat-suffix">+</span><span class="stat-label" data-i18n="stat1_lbl">Yıllık Tecrübe</span></div>
+                        <div class="stat-item"><span class="stat-number" data-target="40">0</span><span class="stat-suffix">+</span><span class="stat-label" data-i18n="stat2_lbl">Ülkeye İhracat</span></div>
+                        <div class="stat-item"><span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span><span class="stat-label" data-i18n="stat3_lbl">Tamamlanan Proje</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="split-visual animate-on-scroll">
+                <img loading="lazy" src="./yakma fırını/mtmakinafab.webp" alt="MT Makina Fabrika">
+            </div>
+        </div>
+    </section>
+
+    <!-- GIF Pair 1 -->
+    <div class="gif-pair animate-on-scroll">
+        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/GİRİŞ GIF.gif" alt="Yakma Fırını"></div>
+        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/82c50025-1790-4a2b-af6f-83628b43dd2a-ezgif.com-video-to-gif-converter.gif" alt="Yakma Fırını Çalışma"></div>
+    </div>
+
+    <!-- ===== 3. WHAT IS AN INCINERATOR (Full-Width Split Reverse) ===== -->
+    <section class="section dark-bg" id="s-what">
+        <div class="wide-split reverse">
+            <div class="split-content animate-on-scroll">
+                <div class="content-block">
+                    <span class="section-tag" data-i18n="what_tag">Yakma Fırını Nedir?</span>
+                    <h2><span data-i18n="what_title_1">Atık Yakma Teknolojisi:</span><br><span class="highlight" data-i18n="what_title_2">Kapsamlı Bir Bakış</span></h2>
+                    <p class="lead" data-i18n="what_lead">Yakma fırınları (incinerator), kontrollü yüksek sıcaklık ortamında atıkların güvenli bir şekilde bertaraf edilmesini sağlayan endüstriyel sistemlerdir. Binlerce yıldır insanlık tarafından kullanılan yanma prensibinin, modern mühendislik ile birleşmesidir.</p>
+                    <p data-i18n="what_p1">Bir yakma fırını sistemi temel olarak iki ana bileşenden oluşur: birincil yanma odası ve ikincil yanma odası. Birincil yanma odasında atıklar 650°C–950°C sıcaklıkta yakılır. Bu aşamada atık maddelerin büyük bölümü gaz ve kül haline dönüşür. Ancak bu yeterli değildir — çıkan gazlar hâlâ zararlı bileşenler içerir.</p>
+                    <p data-i18n="what_p2">İşte burada ikincil yanma odası devreye girer. Birincil odadan çıkan gazlar, ikincil odada 850°C–1200°C sıcaklıkta yeniden yakılır. Bu süreç, dioksin, furan ve diğer toksik gazların tamamen parçalanarak zararsız hale gelmesini sağlar.</p>
+                    <p data-i18n="what_p3">Modern yakma fırınları ayrıca gelişmiş baca gazı arıtma sistemleri ile donatılmıştır. Partikül filtreleri, gaz yıkama üniteleri ve aktif karbon filtreler sayesinde atmosfere salınan emisyon değerleri, uluslararası standartların çok altında tutulur.</p>
+                    <p data-i18n="what_p4">Yanma sonrası kalan kül, hacim olarak orijinal atığın yalnızca %3–5'i kadardır. Bu dramatik hacim azalması, yakma teknolojisinin en büyük avantajlarından biridir.</p>
+                </div>
+            </div>
+            <div class="split-visual animate-on-scroll">
+                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/tıbbi yakma fırını/undefined_Ultra_realistic_4K_s (1).webp" alt="Yakma Fırını Teknolojisi">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. HOW IT WORKS ===== -->
+    <section class="section" id="s-how">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="how_tag">Nasıl Çalışır?</span>
+                <h2><span data-i18n="how_title_1">Yakma Fırını</span> <span class="highlight" data-i18n="how_title_2">Çalışma Prensibi</span></h2>
+            </div>
+            <!-- Process Steps -->
+            <div class="process-steps stagger-children animate-on-scroll">
+                <div class="process-step" data-step="1"><h4 data-i18n="how_step1_t">Yükleme</h4><p data-i18n="how_step1_p">Atıklar manuel veya otomatik hidrolik sistem ile birincil yanma odasına yüklenir.</p></div>
+                <div class="process-step" data-step="2"><h4 data-i18n="how_step2_t">Birincil Yanma</h4><p data-i18n="how_step2_p">Brülörler devreye girer. Oda sıcaklığı 650°C–950°C'ye ulaşır. Atıklar gaz ve küle dönüşür.</p></div>
+                <div class="process-step" data-step="3"><h4 data-i18n="how_step3_t">İkincil Yanma</h4><p data-i18n="how_step3_p">Gazlar ikincil odada 850°C–1200°C'de yeniden yakılır. Toksik maddeler tamamen parçalanır.</p></div>
+                <div class="process-step" data-step="4"><h4 data-i18n="how_step4_t">Baca Arıtma</h4><p data-i18n="how_step4_p">Filtre sistemleri gazları arıtır. Temiz gaz bacadan salınır. Kül toplanır.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5. WHY US ===== -->
+    <section class="section dark-bg" id="s-why">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="why_tag">Farkımız</span>
+                <h2><span data-i18n="why_title_1">Neden</span> <span class="highlight" data-i18n="why_title_2">MT Makina?</span></h2>
+            </div>
+            <div class="why-grid stagger-children animate-on-scroll">
+                <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.5-1.5-1-5 1-7 0 3.5 1.5 6 4 6 2.5 0 3.5-2.5 2-5 1 1 5 2 5 6 0 4-4 6-8 6a2.5 2.5 0 00-2.5 2.5"/></svg></div><h3 data-i18n="why1_t">Güçlü Yanma Teknolojisi</h3><p data-i18n="why1_p">İleri yanma teknolojisi ile atıkların maksimum verimlilikle ve düşük emisyon seviyeleriyle yakılmasını sağlarız.</p></div>
+                <div class="why-card"><div class="why-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 009 9 9 9 0 11-9-9Z"/></svg></div><h3 data-i18n="why2_t">Düşük Emisyonlu Sistemler</h3><p data-i18n="why2_p">Partikül filtreleri ve gaz arıtma teknolojileri sayesinde havaya salınan gazların çevreye zarar vermesi önlenir.</p></div>
+                <div class="why-card"><div class="why-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div><h3 data-i18n="why3_t">Çeşitli Atık Uygunluğu</h3><p data-i18n="why3_p">Tıbbi, hayvansal, tehlikeli ve endüstriyel atıklar için özel olarak tasarlanmış yakma fırınları.</p></div>
+                <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h3 data-i18n="why4_t">Dayanıklı Tasarım</h3><p data-i18n="why4_p">Yüksek sıcaklıklara ve zorlu çalışma koşullarına dayanıklı yapı. Bakım maliyetleri minimize edilir.</p></div>
+                <div class="why-card"><div class="why-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 010 4h-.09c-.658.003-1.25.396-1.51 1z"/></svg></div><h3 data-i18n="why5_t">Otomasyon ve Kolay Kullanım</h3><p data-i18n="why5_p">Gelişmiş kontrol panelleri ile operatörler yakma sürecini kolayca yönetir.</p></div>
+                <div class="why-card"><div class="why-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3 data-i18n="why6_t">Yerli Üretim ve Teknik Destek</h3><p data-i18n="why6_p">Satış sonrası destek ve yedek parça konusunda hızlı çözümler.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GIF Pair 2 -->
+    <div class="gif-pair animate-on-scroll">
+        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/c3c35790-4c3c-45a3-a99b-bdd721df978f-ezgif.com-video-to-gif-converter.gif" alt="Yanma Süreci"></div>
+        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/Photorealistic_cinematic_video_202509041721-ezgif.com-video-to-gif-converter.gif" alt="Sinematik"></div>
+    </div>
+
+    <!-- ===== BRÜLÖR SECTION ===== -->
+    <section class="section auto-height" id="s-burner">
+        <div class="wide-split">
+            <div class="split-content animate-on-scroll">
+                <div class="content-block">
+                    <span class="section-tag" data-i18n="brn_tag">Brülör Sistemleri</span>
+                    <h2><span data-i18n="brn_title_1">Ecoflam & Riello</span><br><span class="highlight" data-i18n="brn_title_2">Endüstriyel Brülörler</span></h2>
+                    <p class="lead" data-i18n="brn_p1">MT Makina yakma fırınlarında, dünya genelinde endüstriyel yanma teknolojisinin öncüsü olan İtalyan markaları Ecoflam ve Riello brülörler kullanılmaktadır. Bu tercih, yakma süreçlerinin maksimum verimlilik ve minimum emisyon ile gerçekleştirilmesini garanti altına alır.</p>
+                    <p data-i18n="brn_p2">Ecoflam brülörler, modüler tasarımları ve geniş kapasite aralıkları ile her türlü endüstriyel yakma uygulamasına uyum sağlar. Dizel, doğalgaz ve LPG yakıtlarıyla çalışabilen bu brülörler, otomatik ateşleme, oransal kontrol ve alev izleme sistemleri ile donatılmıştır. Enerji verimliliği %95'in üzerinde seyreder.</p>
+                    <p data-i18n="brn_p3">Riello brülörler ise 90 yılı aşan mühendislik birikimiyle, sessiz çalışma, düşük NOx emisyonu ve uzun servis ömrü sunmaktadır. Her iki marka da CE sertifikalı olup AB çevre standartlarına tam uyumludur. Fırınlarımızda hem birincil hem de ikincil yanma odaları için ayrı brülörler kullanılarak çift aşamalı, kontrollü yanma sağlanır.</p>
+                </div>
+            </div>
+            <div class="split-visual animate-on-scroll">
+                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/tıbbi yakma fırını/gemini-2.5-flash-image-preview (nano-banana)_Bu_sürgülü_kapak_sis.webp" alt="Brülör Sistemi">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BANNER ===== -->
+    <div class="banner-section">
+        <div class="container"><p class="banner-text animate-on-scroll" data-i18n="banner_text">"Geri dönüşümün en önemli kaynak olduğu prensibinden yola çıkarak, doğru ve dürüst olmaktan taviz vermeden büyüyoruz."</p></div>
+    </div>
+
+    <!-- ===== 6. MEDICAL WASTE (Full-Width Split) ===== -->
+    <section class="section" id="s-medical">
+        <div class="wide-split">
+            <div class="split-content animate-on-scroll">
+                <div class="content-block">
+                    <span class="section-tag" data-i18n="med_tag">Tıbbi Atık Yakma Fırınları</span>
+                    <h2><span data-i18n="med_title_1">Tıbbi Atık</span><br><span class="highlight" data-i18n="med_title_2">Yakma Sistemleri</span></h2>
+                    <p data-i18n="med_p1">Tıbbi atıklar, hastanelerde, kliniklerde, laboratuvarlarda, veteriner muayenehanelerinde ve eczanelerde günlük olarak üretilen, bulaşıcı hastalık riski taşıyan tehlikeli atıklardır. Kullanılmış enjektörler, kan ürünleri, ameliyat kalıntıları, patuolojik atıklar ve kimyasal maddeler bu kategoriye girer.</p>
+                    <p data-i18n="med_p2">Bu atıkların çevreye ve insan sağlığına zarar vermeden bertaraf edilmesi yasal bir zorunluluktur. Dünya Sağlık Örgütü (WHO) ve Avrupa Birliği düzenlemeleri, tıbbi atıkların minimum 850°C sıcaklıkta ve en az 2 saniye kalış süresiyle yakılmasını gerektirmektedir.</p>
+                    <p data-i18n="med_p3">MT Makina'nın tıbbi atık yakma fırınları, çift yanma odası teknolojisi ile bu gereksinimleri fazlasıyla karşılar. Birincil odada 650–950°C, ikincil odada 850–1200°C sıcaklıkla çalışan fırınlarımız, tıbbi atıkları steril kül haline dönüştürür. CE sertifikalı fırınlarımız, AB Direktifi 2000/76/EC'ye tam uyumludur.</p>
+                    <p data-i18n="med_p4">Küçük kliniklerden devlet hastanelerine, üniversite araştırma merkezlerinden askeri sağlık tesislerine kadar geniş bir yelpazede hizmet veren modellerimiz mevcuttur. 80 kg/saat'ten 400 kg/saat'e kadar kapasite seçenekleri sunuyoruz.</p>
+                </div>
+            </div>
+            <div class="split-visual animate-on-scroll">
+                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/tıbbi yakma fırını/1.webp" alt="Tıbbi Atık Yakma Fırını">
+            </div>
+        </div>
+    </section>
+
+    <!-- GIF Pair 3 -->
+    <div class="gif-pair animate-on-scroll">
+        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/Wideangle_shot_in_202509041649_kqpca-ezgif.com-video-to-gif-converter.gif" alt="Geniş Açı"></div>
+        <div class="gif-card"><img loading="lazy" src="./yakma fırını/gifler/Slow_cinematic_dolly_202509111254_m8oeq-ezgif.com-video-to-gif-converter.gif" alt="Dolly"></div>
+    </div>
+
+    <!-- ===== 7. GENERAL/INDUSTRIAL (Full-Width Split Reverse) ===== -->
+    <section class="section dark-bg" id="s-industrial">
+        <div class="wide-split reverse">
+            <div class="split-content animate-on-scroll">
+                <div class="content-block">
+                    <span class="section-tag" data-i18n="gen_tag">Genel & Endüstriyel Yakma Fırınları</span>
+                    <h2><span data-i18n="gen_title_1">Çöp ve Endüstriyel Atık</span><br><span class="highlight" data-i18n="gen_title_2">Yakma Sistemleri</span></h2>
+                    <p data-i18n="gen_p1">Belediye katı atıkları, endüstriyel üretim süreçlerinden kaynaklanan atıklar ve tehlikeli maddeler, düzenli depolama yerine yakma yöntemiyle çok daha güvenli ve verimli şekilde bertaraf edilebilir. Yakma teknolojisi, atık hacmini %95'e kadar azaltarak depolama alanı ihtiyacını minimize eder.</p>
+                    <p data-i18n="gen_p2">MT Makina'nın genel amaçlı yakma fırınları, çeşitli atık türlerini aynı fırında güvenle yakabilecek şekilde tasarlanmıştır. Organize sanayi bölgeleri, belediye atık bertaraf tesisleri, fabrikalar ve enerji geri kazanım projeleri için ideal çözümler sunar.</p>
+                    <p data-i18n="gen_p3">Yüksek kapasiteli modellerimiz (YF-300T ve YF-400T), endüstriyel ölçekte sürekli operasyon için tasarlanmış olup, SCADA entegrasyonu, otomatik besleme ve enerji geri kazanım seçenekleri ile donatılabilir. Bu sayede atık bertarafı aynı zamanda bir enerji kaynağına dönüşür.</p>
+                </div>
+            </div>
+            <div class="split-visual animate-on-scroll">
+                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/Çöp yakma fırını/mt-makina-sahne-1 (4).webp" alt="Endüstriyel Yakma Fırını">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 8. MOBILE & ANIMAL (Full-Width Split) ===== -->
+    <section class="section" id="s-mobile">
+        <div class="wide-split">
+            <div class="split-content animate-on-scroll">
+                <div class="content-block">
+                    <span class="section-tag" data-i18n="mob_tag">Özel Çözümler</span>
+                    <h2><span data-i18n="mob_title_1">Mobil Fırınlar &</span><br><span class="highlight" data-i18n="mob_title_2">Hayvansal Atık Sistemleri</span></h2>
+                    <p data-i18n="mob_p1">Mobil yakma fırınları, sabit tesis kurulması mümkün olmayan veya ekonomik olmayan bölgelerde atık bertarafı ihtiyacını karşılamak üzere geliştirilmiştir. Konteyner veya treyler üzerine monte edilen bu sistemler, herhangi bir lokasyona taşınabilir ve kısa sürede kurularak operasyona hazır hale gelir.</p>
+                    <p data-i18n="mob_p2">Askeri üsler, mülteci kampları, uzak kırsal bölgeler, afet bölgeleri ve geçici sağlık tesisleri için ideal olan mobil fırınlarımız, sabit modellerin tüm özelliklerine sahiptir: çift yanma odası, PLC kontrol, baca gazı arıtma ve düşük emisyon değerleri.</p>
+                    <p data-i18n="mob_p3">Hayvansal atık yakma fırınları ise veteriner klinikleri, mezbahalar, çiftlikler ve hayvancılık tesisleri için tasarlanmıştır. Bulaşıcı hastalık riski taşıyan hayvan karkaslarının güvenle bertarafını sağlar. Özellikle kuş gribi, şap hastalığı gibi salgın dönemlerinde hayati öneme sahiptir.</p>
+                </div>
+            </div>
+            <div class="split-visual animate-on-scroll">
+                <img loading="lazy" src="./yakma fırını/Yakma fırınları görselleri/mobil yakma fırınları/mt-makina-sahne-1.webp" alt="Mobil Yakma Fırını">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 9. COMPARISON TABLE ===== -->
+    <section class="section auto-height dark-bg" id="s-models">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="comp_tag">Model Karşılaştırma</span>
+                <h2><span data-i18n="comp_title_1">Tüm Modeller,</span> <span class="highlight" data-i18n="comp_title_2">Tek Bakışta</span></h2>
+                <p data-i18n="comp_desc">İhtiyacınıza en uygun modeli seçmeniz için tüm teknik özellikleri karşılaştırın.</p>
+            </div>
+            <p class="table-scroll-hint">👈 Tüm modelleri görmek için kaydırın 👉</p>
+            <div class="comparison-table-wrapper animate-on-scroll">
+                <table class="comparison-table">
+                    <thead><tr>
+                        <th data-i18n="col_spec">Özellik</th>
+                        <th>YF-80T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
+                        <th>YF-100T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
+                        <th>YF-150T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
+                        <th>YF-300T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
+                        <th>YF-400T<br><small data-i18n="model_type">Tıbbi Atık</small></th>
+                    </tr></thead>
+                    <tbody>
+                        <tr><td data-i18n="lbl_capacity">Yakma Kapasitesi</td><td>80 kg/saat</td><td>100 kg/saat</td><td>150 kg/saat</td><td>300 kg/saat</td><td>400 kg/saat</td></tr>
+                        <tr><td data-i18n="lbl_primary_temp">Birincil Yanma Sıcaklığı</td><td>650–850 °C</td><td>650–850 °C</td><td>700–900 °C</td><td>750–950 °C</td><td>800–1000 °C</td></tr>
+                        <tr><td data-i18n="lbl_secondary_temp">İkincil Yanma Sıcaklığı</td><td>850–1100 °C</td><td>850–1100 °C</td><td>900–1200 °C</td><td>950–1200 °C</td><td>1000–1200 °C</td></tr>
+                        <tr><td data-i18n="lbl_primary_chamber">Birincil Yanma Odası</td><td>1.8 m³</td><td>2.2 m³</td><td>3.0 m³</td><td>5.5 m³</td><td>7.0 m³</td></tr>
+                        <tr><td data-i18n="lbl_secondary_chamber">İkincil Yanma Odası</td><td>0.9 m³</td><td>1.1 m³</td><td>1.5 m³</td><td>2.8 m³</td><td>3.5 m³</td></tr>
+                        <tr><td data-i18n="lbl_primary_burner">Birincil Brülör Gücü</td><td>120 kW</td><td>175 kW</td><td>250 kW</td><td>450 kW</td><td>600 kW</td></tr>
+                        <tr><td data-i18n="lbl_secondary_burner">İkincil Brülör Gücü</td><td>60 kW</td><td>90 kW</td><td>130 kW</td><td>230 kW</td><td>300 kW</td></tr>
+                        <tr><td data-i18n="lbl_fuel">Yakıt Türü</td><td colspan="5" data-i18n="fuel_val">Dizel / Doğalgaz / LPG</td></tr>
+                        <tr><td data-i18n="lbl_chimney">Baca (Yükseklik / Çap)</td><td>8 m / Ø400</td><td>10 m / Ø450</td><td>12 m / Ø500</td><td>15 m / Ø600</td><td>18 m / Ø700</td></tr>
+                        <tr><td data-i18n="lbl_dimensions">Dış Boyutlar (GxDxY)</td><td>3200×1600×3800</td><td>3800×1800×4200</td><td>4500×2200×4800</td><td>6200×2800×5500</td><td>7500×3200×6000</td></tr>
+                        <tr><td data-i18n="lbl_weight">Ağırlık</td><td>4.500 kg</td><td>5.800 kg</td><td>7.500 kg</td><td>12.000 kg</td><td>16.500 kg</td></tr>
+                        <tr><td data-i18n="lbl_power">Elektrik Bağlantısı</td><td>380V/15kW</td><td>380V/18kW</td><td>380V/25kW</td><td>380V/45kW</td><td>380V/60kW</td></tr>
+                        <tr><td data-i18n="lbl_loading">Yükleme Sistemi</td><td data-i18n="loading_manual" colspan="2">Manuel</td><td data-i18n="loading_auto" colspan="3">Otomatik Hidrolik</td></tr>
+                        <tr><td data-i18n="lbl_control">Kontrol Sistemi</td><td data-i18n="control_plc" colspan="5">PLC Dokunmatik Panel</td></tr>
+                        <tr><td data-i18n="lbl_emission">Emisyon Standardı</td><td data-i18n="emission_eu" colspan="5">AB 2000/76/EC</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Model Cards -->
+            <div class="mobile-model-cards">
+                <div class="model-card"><h3 class="model-card-title">YF-80T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>80 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>650–850 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>850–1100 °C</strong></li><li><span>Birincil Oda</span><strong>1.8 m³</strong></li><li><span>İkincil Oda</span><strong>0.9 m³</strong></li><li><span>Brülör</span><strong>120 / 60 kW</strong></li><li><span>Ağırlık</span><strong>4.500 kg</strong></li><li><span>Elektrik</span><strong>380V/15kW</strong></li><li><span>Yükleme</span><strong>Manuel</strong></li></ul></div>
+                <div class="model-card"><h3 class="model-card-title">YF-100T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>100 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>650–850 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>850–1100 °C</strong></li><li><span>Birincil Oda</span><strong>2.2 m³</strong></li><li><span>İkincil Oda</span><strong>1.1 m³</strong></li><li><span>Brülör</span><strong>175 / 90 kW</strong></li><li><span>Ağırlık</span><strong>5.800 kg</strong></li><li><span>Elektrik</span><strong>380V/18kW</strong></li><li><span>Yükleme</span><strong>Manuel</strong></li></ul></div>
+                <div class="model-card"><h3 class="model-card-title">YF-150T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>150 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>700–900 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>900–1200 °C</strong></li><li><span>Birincil Oda</span><strong>3.0 m³</strong></li><li><span>İkincil Oda</span><strong>1.5 m³</strong></li><li><span>Brülör</span><strong>250 / 130 kW</strong></li><li><span>Ağırlık</span><strong>7.500 kg</strong></li><li><span>Elektrik</span><strong>380V/25kW</strong></li><li><span>Yükleme</span><strong>Oto. Hidrolik</strong></li></ul></div>
+                <div class="model-card"><h3 class="model-card-title">YF-300T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>300 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>750–950 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>950–1200 °C</strong></li><li><span>Birincil Oda</span><strong>5.5 m³</strong></li><li><span>İkincil Oda</span><strong>2.8 m³</strong></li><li><span>Brülör</span><strong>450 / 230 kW</strong></li><li><span>Ağırlık</span><strong>12.000 kg</strong></li><li><span>Elektrik</span><strong>380V/45kW</strong></li><li><span>Yükleme</span><strong>Oto. Hidrolik</strong></li></ul></div>
+                <div class="model-card"><h3 class="model-card-title">YF-400T <small data-i18n="model_type">Tıbbi Atık</small></h3><ul><li><span>Kapasite</span><strong>400 kg/saat</strong></li><li><span>Birincil Sıcaklık</span><strong>800–1000 °C</strong></li><li><span>İkincil Sıcaklık</span><strong>1000–1200 °C</strong></li><li><span>Birincil Oda</span><strong>7.0 m³</strong></li><li><span>İkincil Oda</span><strong>3.5 m³</strong></li><li><span>Brülör</span><strong>600 / 300 kW</strong></li><li><span>Ağırlık</span><strong>16.500 kg</strong></li><li><span>Elektrik</span><strong>380V/60kW</strong></li><li><span>Yükleme</span><strong>Oto. Hidrolik</strong></li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 10. REFERENCES ===== -->
+    <section class="section references-section" id="s-refs">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" data-i18n="ref_tag">Güvenilir İş Ortaklıkları</span>
+                <h2><span data-i18n="ref_title_1">Global ve Kurumsal</span> <span class="highlight" data-i18n="ref_title_2">Referanslarımız</span></h2>
+                <p data-i18n="ref_desc">40'tan fazla ülkeye ihracat. Türkiye'nin en prestijli kurumları ve dünya markalarıyla çalışıyoruz.</p>
+            </div>
+            <div class="references-grid animate-on-scroll">
+                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row1">Kamu & Kurumsal</h4><div class="logos-row colorful">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/Seal_of_the_Turkish_Armed_Forces.webp" alt="TSK">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/Mitlogo (1).webp" alt="MİT">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/Logo_of_Ministry_of_Justice_(Turkey).svg.webp" alt="Adalet">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/Logo_of_Ministry_of_Health_(Turkey).webp" alt="Sağlık">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/turkiye-cumhuriyeti-icisleri-bakanligi-logo-png_seeklogo-345237.webp" alt="İçişleri">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/turkiye-cumhuriyet-merkez-bankasi-logo-png_seeklogo-181809.webp" alt="TCMB">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/ÖSYM.svg.webp" alt="ÖSYM">
+                </div></div>
+                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row2">Savunma & Teknoloji</h4><div class="logos-row colorful">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/ASELSAN_logo.svg.webp" alt="ASELSAN">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/TEI_Logo.webp" alt="TEI">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/Makine_ve_Kimya_Endüstrisi_Kurumu_logo.svg.webp" alt="MKE">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/Bosch-logo.svg.webp" alt="Bosch">
+                </div></div>
+                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row3">Global Markalar</h4><div class="logos-row colorful">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/bp-logo-png_seeklogo-21836.webp" alt="BP">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/castrollogo.webp" alt="Castrol">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/PepsiCo_logo.svg.webp" alt="PepsiCo">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/Humana.webp" alt="Humana">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/1200px-Mercedes_Benz_Logo_11.webp" alt="Mercedes">
+                </div></div>
+                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row4">Sanayi & Holding</h4><div class="logos-row colorful">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/Acarsan_Holding_Logo.webp" alt="Acarsan">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/hun-holdng.webp" alt="Hun">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/golden-rose.webp" alt="Golden Rose">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/melodi-cikolata-logo-png_seeklogo-223826.webp" alt="Melodi">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/betek_boya-logo_brandlogos.net_slepl.webp" alt="Betek">
+                </div></div>
+                <div class="reference-row"><h4 class="row-title" data-i18n="ref_row5">Uluslararası</h4><div class="logos-row colorful">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/İGA_Havalimanı_İşletmesi_A.Ş._logo.svg.webp" alt="İGA">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/TAV.webp" alt="TAV">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/MAXROYAL.webp" alt="Max Royal">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/ARTVINlogo.webp" alt="Artvin">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/MALATYA.webp" alt="Malatya">
+                    <img loading="lazy" src="./yakma fırını/referansların logosu/tuzla-belediyesi-yeni-logo.webp" alt="Tuzla">
+                </div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 11. CONTACT ===== -->
+    <section class="section contact-section" id="s-contact">
+        <div class="container">
+            <div class="contact-wrapper animate-on-scroll">
+                <div class="contact-header">
+                    <span class="section-tag" data-i18n="ct_tag">İletişim</span>
+                    <h2><span data-i18n="ct_title_1">Geleceğe</span> <span class="highlight" data-i18n="ct_title_2">Birlikte</span> <span data-i18n="ct_title_3">Adım Atalım</span></h2>
+                    <p class="contact-intro" data-i18n="ct_intro">Yakma fırını ihtiyaçlarınız için uzman ekibimizle iletişime geçin.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.09.54.2 1.08.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.73.5 2.27.61 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3 data-i18n="ct_phone">Telefon</h3><p>+90 850 259 01 66</p><p>+90 212 613 31 82</p></div>
+                    <div class="contact-card"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div><h3 data-i18n="ct_whatsapp">WhatsApp</h3><p>+90 542 310 99 30</p></div>
+                    <div class="contact-card"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3 data-i18n="ct_email">E-posta</h3><p>info@mtmakina.com.tr</p></div>
+                    <div class="contact-card"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3 data-i18n="ct_address">Adres</h3><p data-i18n="ct_address_val">Cumhuriyet Mah. Nazım Hikmet Blv. 1983 Sk. Kent Palas 2 K:7 D:85-86 Esenyurt / İSTANBUL</p></div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="mailto:info@mtmakina.com.tr?subject=Yakma Fırını Teklif Talebi" class="cta-button primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span data-i18n="ct_cta1">Teklif İsteyin</span></a>
+                    <a href="tel:+908502590166" class="cta-button secondary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.09.54.2 1.08.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.73.5 2.27.61 2.81.7A2 2 0 0122 16.92z"/></svg><span data-i18n="ct_cta2">Hemen Arayın</span></a>
+                    <a href="https://www.mtmakina.com.tr" class="cta-button secondary" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span data-i18n="ct_web">Web Sitemizi Ziyaret Edin</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="section closing-section">
+        <div class="closing-content">
+            <p class="closing-message animate-on-scroll"><span data-i18n="cl_msg1">"Dönüştürülebilir Gelecek,</span><br><span class="highlight" data-i18n="cl_msg2">Güvenli Çözümler."</span></p>
+            <p class="closing-submessage animate-on-scroll" data-i18n="cl_sub">Pratik Düşünüyor • Verimli Tasarlıyor • Kaliteli Üretiyoruz</p>
+            <div class="closing-logo animate-on-scroll"><img src="./yakma fırını/mt-makina-logo.webp" alt="MT Makina"></div>
+            <p class="closing-tagline animate-on-scroll" data-i18n="cl_tag">MT Makina — Global Teknoloji, Yerel Güç</p>
+        </div>
+    </section>
+
+    <div class="lightbox-overlay" id="lightbox"><img src="" alt=""><button class="lightbox-close">✕</button></div>
+    <script src="yakma-firini-translations.js"></script>
+    <script src="yakma-firini.js"></script>
+</body>
+</html>

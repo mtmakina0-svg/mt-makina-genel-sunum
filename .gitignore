@@ -3,3 +3,13 @@
 
 # Dependencies
 node_modules
+
+.vercel
+
+# Build tools and scripts
+_deploy/
+skills/
+
+# Large binary files
+*.pptx
+*.pdf
